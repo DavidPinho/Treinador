@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Treinador</string>
+    <string name="action_settings">Settings</string>
+    <string name="register_athlete">Cadastrar Atleta</string>
+    <string name="register_muscle">Cadastra Musculo</string>
+    <string name="athletes">Atletas</string>
+
+    <string-array name="gender">
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
+
+    <string name="title_activity_introducao">Introducao</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_tipo_exercicio">TipoExercicio</string>
+    <string name="register">Cadastrar</string>
+    <string name="instructions">Instruções</string>
+    <string name="weight">Peso</string>
+    <string name="repetitions">Repetições</string>
+    <string name="description">Descrição</string>
+    <string name="btn_register">Cadastrar</string>
+    <string name="value">Valor</string>
+    <string name="date">Data</string>
+    <string name="duration">Duração</string>
+    <string name="register_size">Cadastra Medida</string>
+
+</resources>

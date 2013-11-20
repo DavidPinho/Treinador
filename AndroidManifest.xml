@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.treinador"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.treinador.activity.MainIntroduction"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.treinador.activity.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.AthleteList"
+            android:label="@string/athletes" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.RegisterAthlete"
+            android:label="@string/register_athlete" >
+        </activity>
+        <activity
+            android:name="com.treinador.RegisterExercise"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.treinador.RegisterMark"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.RegisterExerciseType"
+            android:label="@string/title_activity_tipo_exercicio" >
+        </activity>
+        <activity
+            android:name="com.treinador.CalendarActivities"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.RegisterMuscle"
+            android:label="@string/register_muscle" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.RegisterSize"
+            android:label="@string/register_size" >
+        </activity>
+    </application>
+
+</manifest>

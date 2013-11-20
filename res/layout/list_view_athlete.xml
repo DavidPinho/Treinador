@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+<LinearLayout
+    android:id="@+id/topBar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:orientation="horizontal"
+    android:background="@color/light_gray" >
+
+    <!-- Some Buttons -->
+
+    <Button
+        android:id="@+id/btn_excluir_atleta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:background="@color/light_gray"
+        android:text="Excluir" />
+
+    <Button
+        android:id="@+id/btn_editar_atleta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.34"
+        android:background="@drawable/border_left"
+        android:text="Editar" />
+
+    <Button
+        android:id="@+id/btn_novo_atleta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+         android:background="@drawable/border_left"
+        android:text="Novo" />
+</LinearLayout>
+
+<ListView
+    android:id="@+id/lv_atleta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/topBar" >
+</ListView>
+
+</RelativeLayout>
