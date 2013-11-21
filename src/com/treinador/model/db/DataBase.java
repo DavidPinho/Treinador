@@ -8,34 +8,81 @@ public class DataBase {
 
 	private boolean isExecuting;
 	// classe para o banco de Dados
-	public static final String TB_ATHLETE = "athlete",
-			//TB_MUSCULO = "musculo", 
+	public static final String TB_ATHLETE = "athlete", 
+			TB_MARK = "mark", TB_SIZE = "size", TB_MUSCLE = "muscle",
+			TB_EXERCISE = "exercise", TB_EXERCISE_TYPE = "exercise_type",
+							   
 			
 
-
+			
 			ATHLETE_ID = "idathlete", ATHLETE_NAME = "name",
-					ATHLETE_BIRTHDATE = "birthdate", ATHLETE_GENDER = "gender"
+			ATHLETE_BIRTHDATE = "birthdate", ATHLETE_GENDER = "gender",
 			
-			//MUSCULO_ID = "idmusculo", MUSCULO_DESCRICAO = "descricao"
-			;
+			MUSCLE_ID = "idmuscle", MUSCLE_DESCRIPTION = "description",
+			
+			SIZE_ID = "idsize", SIZE_ATHLETE_ID = "idathlete", SIZE_MUSCLE_ID = "idmuscle",
+			SIZE_DATE = "date", SIZE_VALUE ="value",
+			
+			MARK_ID = "idmark", MARK_ATHLETE_ID = "idathlete", MARK_NAME = "name",
+			MARK_INITIAL_DATE = "initial_date", MARK_FINAL_DATE = "final_date",
+			
+			EXERCISE_ID = "idexercise", EXERCISE_ATHLETE_ID = "idathlete", EXERCISE_EXERCISE_TYPE_ID = "idtype_exercise",
+			EXERCISE_INSTRUCTIONS = "instructions", EXERCISE_WEIGHT="weight", EXERCISE_REPETITIONS = "repetitions",
+			EXERCISE_DURATION = "duration", EXERCISE_DATE = "date",
+			
+			EXERCISE_TYPE_ID = "idexercise_type", EXERCISE_TYPE_NAME ="name"	;
+	
+	
 
 	private static DataBase singleton;
 	private final String[] CREATE_SQL = new String[] {
 
 			
 			"CREATE TABLE IF NOT EXISTS " + TB_ATHLETE+ "(" + ATHLETE_ID
-					+ " integer primary key autoincrement," + "" + ATHLETE_NAME
+					+ " integer not null primary key autoincrement," + "" + ATHLETE_NAME
 					+ " text not null," + "" + ATHLETE_GENDER
 					+ " text not null," + "" + ATHLETE_BIRTHDATE
 					+ " text not null);",
 
-			/*"CREATE TABLE IF NOT EXISTS " + TB_MUSCULO + "(" + MUSCULO_ID
-					+ " integer primary key," + "" + MUSCULO_DESCRICAO + " text not null);",*/
+			"CREATE TABLE IF NOT EXISTS " + TB_MUSCLE + "(" + MUSCLE_ID
+					+ " integer not null primary key," + "" + MUSCLE_DESCRIPTION + " text not null);",
+					
+			"CREATE TABLE IF NOT EXISTS " + TB_SIZE+ "(" + SIZE_ID
+					+ " integer not null primary key autoincrement," + "" + SIZE_DATE
+					+ " text not null," + "" + SIZE_VALUE
+					+ " real not null," + "" + SIZE_ATHLETE_ID
+					+ " integer not null," +""+ SIZE_MUSCLE_ID
+					+ " integer not null, foreign key("+SIZE_ATHLETE_ID+") references "+TB_ATHLETE
+					+ "("+SIZE_ATHLETE_ID+"), foreign key("+SIZE_MUSCLE_ID+") references "+TB_MUSCLE
+					+ "("+SIZE_MUSCLE_ID+"));",			
+					
+			"CREATE TABLE IF NOT EXISTS " + TB_MARK+ "(" + MARK_ID
+					+ " integer not null primary key autoincrement," + "" + MARK_NAME
+					+ " text not null," + "" + MARK_INITIAL_DATE
+					+ " text not null," + "" + MARK_FINAL_DATE
+					+ " text not null," + "" + MARK_ATHLETE_ID
+					+ " integer not null, foreign key("+MARK_ATHLETE_ID+") references "+TB_ATHLETE
+					+ "("+MARK_ATHLETE_ID+"));",
+					
+			"CREATE TABLE IF NOT EXISTS " + TB_EXERCISE_TYPE + "(" + EXERCISE_TYPE_ID
+					+ " integer not null primary key," + "" + EXERCISE_TYPE_NAME + " text not null);",
+					
+			
+			"CREATE TABLE IF NOT EXISTS " + TB_EXERCISE+ "(" + EXERCISE_ID
+					+ " integer not null primary key autoincrement," + "" + EXERCISE_INSTRUCTIONS
+					+ " text not null," + "" + EXERCISE_DATE
+					+ " text not null," + "" + EXERCISE_WEIGHT
+					+ " real not null," + "" +EXERCISE_REPETITIONS
+					+ " integer not null," + "" +EXERCISE_DURATION
+					+ " float not null," + "" +EXERCISE_ATHLETE_ID
+					+ " integer not null," +""+ EXERCISE_EXERCISE_TYPE_ID
+					+ " integer not null, foreign key("+EXERCISE_ATHLETE_ID+") references "+TB_ATHLETE
+					+ "("+SIZE_ATHLETE_ID+"), foreign key("+EXERCISE_EXERCISE_TYPE_ID+") references "+TB_EXERCISE_TYPE
+					+ "("+EXERCISE_EXERCISE_TYPE_ID+"));"
 
 					
-			//inserindo atletas para teste
-			"INSERT INTO "+ TB_ATHLETE + " VALUES('David Pinho', 'Masculino','1993-07-08')"
 	};
+	
 	private SQLiteDatabase db;
 	private SQLiteHelper dbHelper;
 
