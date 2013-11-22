@@ -14,32 +14,32 @@
     <!-- Some Buttons -->
 
     <Button
-        android:id="@+id/btn_excluir_atleta"
+        android:id="@+id/btn_remove_athlete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.33"
         android:background="@color/light_gray"
-        android:text="Excluir" />
+        android:text="Remove" />
 
     <Button
-        android:id="@+id/btn_editar_atleta"
+        android:id="@+id/btn_edit_athlete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.34"
         android:background="@drawable/border_left"
-        android:text="Editar" />
+        android:text="Edit" />
 
     <Button
-        android:id="@+id/btn_novo_atleta"
+        android:id="@+id/btn_new_athlete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.33"
          android:background="@drawable/border_left"
-        android:text="Novo" />
+        android:text="New" />
 </LinearLayout>
 
 <ListView
-    android:id="@+id/lv_atleta"
+    android:id="@+id/lv_athlete"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentLeft="true"

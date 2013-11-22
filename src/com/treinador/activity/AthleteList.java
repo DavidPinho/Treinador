@@ -30,7 +30,7 @@ public class AthleteList extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_athlete);
 		
-		btn_new = (Button)findViewById(R.id.btn_novo_atleta);
+		btn_new = (Button)findViewById(R.id.btn_new_athlete);
 		btn_new.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -49,7 +49,7 @@ public class AthleteList extends Activity{
 		
 		ArrayAdapter<Athlete> adapter = new AthleteAdapter(this, R.layout.list_view_adapter_athlete, athletesList);
 		
-		listView = (ListView) findViewById(R.id.lv_atleta);
+		listView = (ListView) findViewById(R.id.lv_athlete);
 		listView.setAdapter(adapter);
 		
 		listView.setOnItemClickListener(new OnItemClickListener() {

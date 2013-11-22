@@ -36,13 +36,13 @@ public class RegisterAthlete extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_athlete);
 		
-		lbl_name = (TextView) findViewById(R.id.lbl_nome_cad);
-		txt_name = (EditText) findViewById(R.id.txt_nome);
-		lbl_birthDate = (TextView) findViewById(R.id.lbl_data_nascimento);
-		txt_birthDate = (EditText) findViewById(R.id.txt_data_nascimento);
-		lbl_gender = (TextView) findViewById(R.id.lbl_sexo);
-		spn_gender = (Spinner) findViewById(R.id.spn_sexo);
-		btn_create = (Button) findViewById(R.id.btn_cadastrar);
+		lbl_name = (TextView) findViewById(R.id.lbl_name);
+		txt_name = (EditText) findViewById(R.id.txt_name);
+		lbl_birthDate = (TextView) findViewById(R.id.lbl_birthDate);
+		txt_birthDate = (EditText) findViewById(R.id.txt_birthDate);
+		lbl_gender = (TextView) findViewById(R.id.lbl_gender);
+		spn_gender = (Spinner) findViewById(R.id.spn_gender);
+		btn_create = (Button) findViewById(R.id.btn_register);
 		
 		
 		btn_create.setOnClickListener(new View.OnClickListener() {			
