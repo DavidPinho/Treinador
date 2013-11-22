@@ -11,6 +11,7 @@ import com.treinador.model.Athlete;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.ToggleButton;
 
 public class AthleteDB extends Dao{
 
@@ -35,23 +36,60 @@ public class AthleteDB extends Dao{
 				 
 	    Cursor c = db.getDB().query(DataBase.TB_ATHLETE, null, null, null, null, null, null);
 	    
-	    List<Athlete> atletas = new ArrayList<Athlete>();
+	    List<Athlete> athletes = new ArrayList<Athlete>();
 	    
 	    for(int i= 0;i<c.getCount();i++){
 	    	c.moveToPosition(i);
 	    	
-	    	Athlete atleta = new Athlete();
+	    	Athlete athlete = new Athlete();
 	    	
-	    	atleta.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.ATHLETE_ID)));
-	    	atleta.setName(c.getString(c.getColumnIndex(DataBase.ATHLETE_NAME)));
-	    	atleta.setBirthDate(c.getString(c.getColumnIndex(DataBase.ATHLETE_BIRTHDATE)));
-	    	atleta.setGender(c.getString(c.getColumnIndex(DataBase.ATHLETE_GENDER)));
+	    	athlete.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.ATHLETE_ID)));
+	    	athlete.setName(c.getString(c.getColumnIndex(DataBase.ATHLETE_NAME)));
+	    	athlete.setBirthDate(c.getString(c.getColumnIndex(DataBase.ATHLETE_BIRTHDATE)));
+	    	athlete.setGender(c.getString(c.getColumnIndex(DataBase.ATHLETE_GENDER)));
 	    	
-	    	atletas.add(atleta);
+	    	athletes.add(athlete);
 	    }
 	    
-	    return atletas;
+	    return athletes;
 		
 	}
+	
+	public void delete(int id){
+		db.getDB().delete(DataBase.TB_ATHLETE, DataBase.ATHLETE_ID+"=?", new String[] {Integer.toString(id)});
+	}
+	
+	public void update(Athlete a){
+		
+		ContentValues c  = new ContentValues();
+		c.put(DataBase.ATHLETE_NAME, a.getName());
+		c.put(DataBase.ATHLETE_GENDER, a.getGender());
+		c.put(DataBase.ATHLETE_BIRTHDATE, a.getBirthDate());
+		db.getDB().update(DataBase.TB_ATHLETE, c, DataBase.ATHLETE_ID+"=?", new String[] {Integer.toString(a.getIdAthlete())});
+	}
+	
+	
+	public Athlete getOne(int id){
+		
+		  Cursor c = db.getDB().query(DataBase.TB_ATHLETE, null, DataBase.ATHLETE_ID+"=?", new String[] {Integer.toString(id)}, null, null, null);
+		    
+		    Athlete athlete = new Athlete();
+		    
+		    for(int i= 0;i<c.getCount();i++){
+		    	c.moveToPosition(i);
+		    		    	
+		    	athlete.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.ATHLETE_ID)));
+		    	athlete.setName(c.getString(c.getColumnIndex(DataBase.ATHLETE_NAME)));
+		    	athlete.setBirthDate(c.getString(c.getColumnIndex(DataBase.ATHLETE_BIRTHDATE)));
+		    	athlete.setGender(c.getString(c.getColumnIndex(DataBase.ATHLETE_GENDER)));
+		    } 	
+		   		    
+		    return athlete;	
+		
+	}
+	
+	
+	
+	
 
 }
