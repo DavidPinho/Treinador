@@ -12,12 +12,12 @@ import android.view.Menu;
 
 public class MainIntroduction extends Activity {
 	
-	 private final int SPLASH_DISPLAY_LENGHT = 3000;
+	 private final int SPLASH_DISPLAY_LENGHT = 500;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.register_mark);
+		setContentView(R.layout.main_introduction);
 		getActionBar().hide();
 		
 		new Handler().postDelayed(new Runnable(){

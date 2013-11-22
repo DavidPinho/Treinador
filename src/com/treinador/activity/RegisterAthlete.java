@@ -53,15 +53,15 @@ public class RegisterAthlete extends Activity {
 				atleta.setName(txt_name.getText().toString());
 				atleta.setGender(spn_gender.getSelectedItem().toString());
 				atleta.setBirthDate(txt_birthDate.getText().toString());
+				
 				AthleteDB athleteDB = new AthleteDB(getApplicationContext());
-				athleteDB.insert(atleta);
-				clearFields();
+				
+				athleteDB.insert(atleta);	
+							
 				Intent intent = new Intent(RegisterAthlete.this,AthleteList.class);
 				RegisterAthlete.this.startActivity(intent);
 				RegisterAthlete.this.finish();
-				
-				List<Athlete> athletes = athleteDB.getAll();
-				athletes.get(0).getIdAthlete();	
+			
 			}
 		});
 		
