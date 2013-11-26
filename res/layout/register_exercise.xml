@@ -1,216 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
-        
-     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_screens">
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-        
-         <TableLayout 
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp">
-    
-		    <TableRow 
-		       android:id="@+id/tableRow_row1Description_Exercise"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content" 
-		       android:layout_marginBottom="10dp" >
-		       
-		       <TextView 
-		           android:id="@+id/lbl_description_Exercise"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:textSize="25sp"
-		           android:text="@string/description"/>
-		    </TableRow>
-		    <TableRow 
-		       android:id="@+id/tableRow_row2Description__Exercise"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content" 
-		       android:layout_marginBottom="5dp">
-		
-		        <EditText
-		           android:id="@+id/txt_row2Description__Exercise"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:background="@drawable/rounded_rect">
-		        </EditText>
-		    </TableRow>
-		
-		    <TableRow
-		       android:id="@+id/tableRow_row1Instructions__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="10dp" >
-			
-		        <TextView 
-		           android:id="@+id/lbl_row1Instructions__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:textSize="25sp"
-		           android:text="@string/instructions"/>
-		    </TableRow>
-		    <TableRow 
-		       android:id="@+id/tableRow_row2Instructions__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="20dp">
-		        
-		        <EditText
-		           android:id="@+id/txt_row2Instructions__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:background="@drawable/rounded_rect"/>
-		    </TableRow>
-		    
-		    <TableRow
-		       android:id="@+id/tableRow_row1Date__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="10dp" >
-			
-		        <TextView 
-		           android:id="@+id/lbl_row1Date__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:textSize="25sp"
-		           android:text="@string/date"/>
-		    </TableRow>
-		    <TableRow 
-		       android:id="@+id/tableRow_row2Date__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="20dp">
-		        
-		        <EditText
-		           android:id="@+id/txt_row2Date__ExerciseRegister"
-		           android:inputType="date"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:background="@drawable/rounded_rect"/>
-		    </TableRow> 
-		    		     
-		    <TableRow
-		       android:id="@+id/tableRow_row1Weight__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="10dp" >
-			
-		        <TextView 
-		           android:id="@+id/lbl_row1Weight__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:textSize="25sp"
-		           android:text="@string/weight"/>
-		    </TableRow>
-		    <TableRow 
-		       android:id="@+id/tableRow_row2Weight__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="20dp">
-		        
-		        <EditText
-		           android:id="@+id/txt_row2Weight__ExerciseRegister"
-		           android:inputType="number"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:background="@drawable/rounded_rect"/>
-		    </TableRow> 
-		    
-		    <TableRow
-		       android:id="@+id/tableRow_row1Repetitions__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="10dp" >
-			
-		        <TextView 
-		           android:id="@+id/lbl_row1Repetitions__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:textSize="25sp"
-		           android:text="@string/repetitions"/>
-		    </TableRow>
-		    <TableRow 
-		       android:id="@+id/tableRow_row2Repetitions__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="20dp">
-		        
-		        <EditText
-		           android:id="@+id/txt_row2Repetitions__ExerciseRegister"
-		           android:inputType="number"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:background="@drawable/rounded_rect"/>
-		    </TableRow> 
-		    
-		    <TableRow
-		       android:id="@+id/tableRow_row1Duration__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="10dp" >
-			
-		        <TextView 
-		           android:id="@+id/lbl_row1Duration__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:textSize="25sp"
-		           android:text="@string/duration"/>
-		    </TableRow>
-		    <TableRow 
-		       android:id="@+id/tableRow_row2Duration__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content"
-		       android:layout_marginBottom="20dp">
-		        
-		        <EditText
-		           android:id="@+id/txt_row2Duration__ExerciseRegister"
-		           android:inputType="time"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:background="@drawable/rounded_rect"/>
-		    </TableRow> 
-		    
-		    <TableRow 
-		       android:id="@+id/tableRow_buttonRegister__ExerciseRegister"
-		       android:layout_width="match_parent"
-		       android:layout_height="wrap_content">
-		        
-		        <Button
-		           android:id="@+id/btn_buttonRegister__ExerciseRegister"
-		           android:layout_width="match_parent"
-		           android:layout_height="wrap_content"
-		           android:layout_weight="1"
-		           android:gravity="center"
-		           android:text="@string/btn_register"
-		           android:textSize="20sp"
-		           android:background="@drawable/my_button"/>
-			</TableRow>
-		    
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout_btn"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true"
+        android:padding="10dp" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:id="@+id/tableRow_row1Description_Exercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/lbl_description_Exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/description"
+                    android:textSize="30sp"
+                    android:textColor="#000000"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row2Description__Exercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp" >
+
+                <EditText
+                    android:id="@+id/txt_row2Description__Exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/selector_edit_text" 
+                    android:textSize="30sp"
+                    android:textStyle="italic">
+                </EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row1Instructions__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/lbl_row1Instructions__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/instructions"
+                    android:textSize="30sp" 
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row2Instructions__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/txt_row2Instructions__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_text"
+                    android:gravity="center" 
+                    android:textSize="30sp"
+                    android:textStyle="italic"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row1Date__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/lbl_row1Date__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/date"
+                    android:textSize="30sp"
+                    android:textColor="#000000"  />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row2Date__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/txt_row2Date__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_text"
+                    android:gravity="center"
+                    android:inputType="date"
+                    android:textSize="30sp"
+                    android:textStyle="italic"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row1Weight__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/lbl_row1Weight__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/weight"
+                    android:textSize="30sp" 
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row2Weight__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/txt_row2Weight__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_text"
+                    android:gravity="center"
+                    android:inputType="number" 
+                    android:textSize="30sp"
+                    android:textStyle="italic"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row1Repetitions__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/lbl_row1Repetitions__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/repetitions"
+                    android:textSize="30sp" 
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row2Repetitions__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/txt_row2Repetitions__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_text"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp" 
+                    android:textStyle="italic"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row1Duration__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/lbl_row1Duration__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/duration"
+                    android:textSize="30sp"
+                    android:textColor="#000000"  />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_row2Duration__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/txt_row2Duration__ExerciseRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_text"
+                    android:gravity="center"
+                    android:inputType="time" 
+                    android:textSize="30sp"
+                    android:textStyle="italic"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+    <TableLayout
+        android:id="@+id/tableLayout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="2dp" >
+
+        <TableRow
+            android:id="@+id/tableRow_buttonRegister__ExerciseRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_Register__ExerciseRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@string/btn_register"
+                android:textSize="40sp" 
+                android:textColor="#000000"
+                />
+        </TableRow>
     </TableLayout>
-    
- </ScrollView>
+
+</RelativeLayout>
