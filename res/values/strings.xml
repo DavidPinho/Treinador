@@ -23,6 +23,8 @@
     <string name="btn_register">Cadastrar</string>
     <string name="value">Valor</string>
     <string name="date">Data</string>
+    <string name="initial_date">Data Inicial</string>
+    <string name="final_date">Data Final</string>
     <string name="duration">Duração</string>
     <string name="register_size">Cadastra Medida</string>
 
