@@ -19,8 +19,10 @@ public class MarkDB extends Dao {
 		ContentValues c = new ContentValues();
 
 		c.put(DataBase.MARK_ID, m.getIdMark());
+		c.put(DataBase.MARK_ATHLETE_ID, m.getIdAthlete());
 		c.put(DataBase.MARK_NAME, m.getDescription());
-		c.put(DataBase.MARK_FINAL_DATE, m.getDate());
+		c.put(DataBase.MARK_INITIAL_DATE, m.getInitialDate());
+		c.put(DataBase.MARK_FINAL_DATE, m.getFinalDate());
 
 		long idMark = db.getDB().insert(DataBase.TB_MARK, null, c);
 
@@ -40,8 +42,10 @@ public class MarkDB extends Dao {
 			Mark mark = new Mark();
 
 			mark.setIdMark(c.getInt(c.getColumnIndex(DataBase.MARK_ID)));
+			mark.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.MARK_ATHLETE_ID)));
 			mark.setDescription(c.getString(c.getColumnIndex(DataBase.MARK_NAME)));
-			mark.setDate(c.getString(c.getColumnIndex(DataBase.MARK_FINAL_DATE)));
+			mark.setInitialDate(c.getString(c.getColumnIndex(DataBase.MARK_INITIAL_DATE)));
+			mark.setFinalDate(c.getString(c.getColumnIndex(DataBase.MARK_FINAL_DATE)));
 
 			marks.add(mark);
 		}
@@ -49,6 +53,7 @@ public class MarkDB extends Dao {
 		return marks;
 
 	}
+	
 	
 	public void delete(int id){
 		db.getDB().delete(DataBase.TB_MARK, DataBase.MARK_ID+"=?", new String[] {Integer.toString(id)});
@@ -58,7 +63,8 @@ public class MarkDB extends Dao {
 		
 		ContentValues c  = new ContentValues();
 		c.put(DataBase.MARK_NAME, m.getDescription());
-		c.put(DataBase.MARK_FINAL_DATE, m.getDate());
+		c.put(DataBase.MARK_INITIAL_DATE, m.getInitialDate());
+		c.put(DataBase.MARK_FINAL_DATE, m.getFinalDate());
 		db.getDB().update(DataBase.TB_MARK, c, DataBase.MARK_ID+"=?", new String[] {Integer.toString(m.getIdMark())});
 	}
 	
@@ -73,8 +79,10 @@ public class MarkDB extends Dao {
 		    	c.moveToPosition(i);
 		    		    	
 		    	mark.setIdMark(c.getInt(c.getColumnIndex(DataBase.MARK_ID)));
+		    	mark.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.MARK_ATHLETE_ID)));
 		    	mark.setDescription(c.getString(c.getColumnIndex(DataBase.MARK_NAME)));
-		    	mark.setDate(c.getString(c.getColumnIndex(DataBase.MARK_FINAL_DATE)));
+		    	mark.setInitialDate(c.getString(c.getColumnIndex(DataBase.MARK_INITIAL_DATE)));
+				mark.setFinalDate(c.getString(c.getColumnIndex(DataBase.MARK_FINAL_DATE)));
 		    	
 		    } 	
 		   		    
