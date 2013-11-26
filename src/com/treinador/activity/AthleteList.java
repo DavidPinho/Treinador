@@ -11,6 +11,7 @@ import com.treinador.model.db.AthleteDB;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -25,14 +26,21 @@ public class AthleteList extends Activity{
 	List<String> athletes = new ArrayList<String>();
 	AthleteDB athletedb;
 	Button btn_new;
+	Button btn_delete;
+	List<Athlete> athletesList;
+	AthleteAdapter adapter;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_athlete);
 		
+		athletedb = new AthleteDB(getApplicationContext());
+		athletesList = athletedb.getAll();
+		adapter = new AthleteAdapter(this, R.layout.list_view_adapter_athlete,(ArrayList<Athlete>) athletesList);
+		
 		btn_new = (Button)findViewById(R.id.btn_new_athlete);
-		btn_new.setOnClickListener(new View.OnClickListener() {
-			
+		btn_delete = (Button)findViewById(R.id.btn_remove_athlete);
+		btn_new.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
 				Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
@@ -41,42 +49,33 @@ public class AthleteList extends Activity{
 			}
 		});
 		
+		btn_delete.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				for(Athlete athlete : adapter.getAllAthletes()){
+					if(athlete.getSelected()){
+						athletedb.delete(athlete.getIdAthlete());
+					}
+				}
+				adapter.clear();
+				ArrayList<Athlete> atheletes = (ArrayList<Athlete>) athletedb.getAll();	
+				adapter.restoreList();
+				
+				adapter.addAll(atheletes);
+				//adapter.notifyDataSetChanged();
+				
+				
+				
+			}
+		});
 		
-		athletedb = new AthleteDB(getApplicationContext());
-		List<Athlete> athletesList = athletedb.getAll();
-		for(int i = 0 ; i < athletesList.size(); i++)
-			athletes.add(athletesList.get(i).getName());
-		
-		ArrayAdapter<Athlete> adapter = new AthleteAdapter(this, R.layout.list_view_adapter_athlete, athletesList);
+	
 		
 		listView = (ListView) findViewById(R.id.lv_athlete);
 		listView.setAdapter(adapter);
 		
-		listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> adapter, View view, int position,
-					long id) {
-				
-				switch (position) {
-				case 0:
-					String mensagem ="Vc esta nesta pagina";
-					Toast.makeText(AthleteList.this, mensagem, Toast.LENGTH_SHORT);
-					break;
-				case 1:
-					//Intent changeActivity = new Intent(AthleteList.this,MainActivity.class);
-					//startActivityForResult(changeActivity, 1);
-					
-					break;
-
-				default:
-					break;
-				}
-				
-			}
-			
-			
-		});
 		
 	}
 	

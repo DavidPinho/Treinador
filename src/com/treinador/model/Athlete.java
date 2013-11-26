@@ -1,11 +1,18 @@
 package com.treinador.model;
 
+import android.R.bool;
+
 public class Athlete {
 	
 	private int idAthlete;
 	private String name;
 	private String gender;
 	private String birthDate;
+	private Boolean selected;
+	
+	public Athlete(){
+		this.selected =false;
+	}
 	
 	public int getIdAthlete() {
 		return idAthlete;
@@ -31,6 +38,21 @@ public class Athlete {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
+	
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	public Boolean getSelected() {
+		return selected;
+	}
+	public void setSelected(Boolean selected) {
+		this.selected = selected;
+	}
+	
+	
 	
 	
 	
