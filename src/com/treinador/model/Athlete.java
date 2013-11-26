@@ -1,8 +1,10 @@
 package com.treinador.model;
 
+import java.io.Serializable;
+
 import android.R.bool;
 
-public class Athlete {
+public class Athlete  implements Serializable{
 	
 	private int idAthlete;
 	private String name;

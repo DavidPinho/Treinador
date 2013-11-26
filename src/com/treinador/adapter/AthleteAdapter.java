@@ -31,8 +31,6 @@ public class AthleteAdapter extends ArrayAdapter<Athlete> {
 	    this.resourceId = resource;
 		ctx = context;
 		this.athletes= athletesList;
-		// inflater = (LayoutInflater) ctx
-	      //          .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 	
 	
@@ -47,10 +45,10 @@ public class AthleteAdapter extends ArrayAdapter<Athlete> {
   
        
         TextView nome = (TextView) view.findViewById(R.id.lbl_nome_atleta_lista);
-        CheckBox cb = (CheckBox) view.findViewById(R.id.cb_atleta_lista);
-        //cb.setChecked(false);   
+        CheckBox cb = (CheckBox) view.findViewById(R.id.cb_atleta_lista);  
         cb.setTag(position);
         cb.setOnCheckedChangeListener(myCheckChangList);
+        cb.setChecked(false);
         
         
         
@@ -73,7 +71,7 @@ public class AthleteAdapter extends ArrayAdapter<Athlete> {
     	return ((Athlete)getItem(position));
     }
     
-    public 	ArrayList<Athlete> getAllAthletes(){
+    public 	ArrayList<Athlete> getAllSelectedAthletes(){
     	ArrayList<Athlete> list = new ArrayList<Athlete>();
     	for(Athlete at : athletes){
     		if(at.getSelected())

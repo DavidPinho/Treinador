@@ -9,6 +9,8 @@ import com.treinador.model.Athlete;
 import com.treinador.model.db.AthleteDB;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
@@ -27,12 +29,15 @@ public class AthleteList extends Activity{
 	AthleteDB athletedb;
 	Button btn_new;
 	Button btn_delete;
+	Button btn_update_list_athlete;
 	List<Athlete> athletesList;
-	AthleteAdapter adapter;
+	AthleteAdapter adapter;	
 	
 	protected void onCreate(Bundle savedInstanceState) {
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setTitle("Alerta").setMessage("Selecione apenas 1 atleta!").setNeutralButton("OK", null);  
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_athlete);
+		//s
 		
 		athletedb = new AthleteDB(getApplicationContext());
 		athletesList = athletedb.getAll();
@@ -40,6 +45,8 @@ public class AthleteList extends Activity{
 		
 		btn_new = (Button)findViewById(R.id.btn_new_athlete);
 		btn_delete = (Button)findViewById(R.id.btn_remove_athlete);
+		btn_update_list_athlete = (Button)findViewById(R.id.btn_edit_athlete);
+		
 		btn_new.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
@@ -49,24 +56,35 @@ public class AthleteList extends Activity{
 			}
 		});
 		
-		btn_delete.setOnClickListener(new View.OnClickListener() {
-			
+		btn_delete.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
 				
-				for(Athlete athlete : adapter.getAllAthletes()){
-					if(athlete.getSelected()){
+				for(Athlete athlete : adapter.getAllSelectedAthletes()){
+					if(athlete.getSelected())
 						athletedb.delete(athlete.getIdAthlete());
-					}
 				}
 				adapter.clear();
 				ArrayList<Athlete> atheletes = (ArrayList<Athlete>) athletedb.getAll();	
-				adapter.restoreList();
-				
+				adapter.restoreList();				
 				adapter.addAll(atheletes);
-				//adapter.notifyDataSetChanged();
-				
-				
+			}
+		});
+		
+		btn_update_list_athlete.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ArrayList<Athlete> list=adapter.getAllSelectedAthletes();
+				if(list.size()>1)
+					alert.show();
+				else if(list.size()==1){
+					Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
+					intentNew.putExtra("athlete", list.get(0));
+					AthleteList.this.startActivity(intentNew);
+					AthleteList.this.finish();						
+				}
+					
 				
 			}
 		});

@@ -31,6 +31,9 @@ public class RegisterAthlete extends Activity {
 	
 	Button btn_create;
 	
+	private boolean update=false;
+	private int id;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,19 +47,32 @@ public class RegisterAthlete extends Activity {
 		spn_gender = (Spinner) findViewById(R.id.spn_gender);
 		btn_create = (Button) findViewById(R.id.btn_register);
 		
+		Athlete athlete = (Athlete) getIntent().getSerializableExtra("athlete");
+		update=false;
+		if(athlete!=null){
+			fillFields(athlete);
+			update=true;
+			id = athlete.getIdAthlete();
+		}
+		
 		
 		btn_create.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View arg0) {
 				
-				Athlete atleta = new Athlete();
-				atleta.setName(txt_name.getText().toString());
-				atleta.setGender(spn_gender.getSelectedItem().toString());
-				atleta.setBirthDate(txt_birthDate.getText().toString());
+				Athlete athlete = new Athlete();
+				athlete.setName(txt_name.getText().toString());
+				athlete.setGender(spn_gender.getSelectedItem().toString());
+				athlete.setBirthDate(txt_birthDate.getText().toString());
+				
 				
 				AthleteDB athleteDB = new AthleteDB(getApplicationContext());
-				
-				athleteDB.insert(atleta);	
+				if (update){	
+					athlete.setIdAthlete(id);
+					athleteDB.update(athlete);
+				}
+				else
+					athleteDB.insert(athlete);
 							
 				Intent intent = new Intent(RegisterAthlete.this,AthleteList.class);
 				RegisterAthlete.this.startActivity(intent);
@@ -71,6 +87,15 @@ public class RegisterAthlete extends Activity {
 		txt_name.setText("");
 		txt_birthDate.setText("");
 		spn_gender.setSelection(0);
+	}
+	
+	private void fillFields(Athlete a ){
+		txt_name.setText(a.getName());
+		txt_birthDate.setText(a.getBirthDate());
+		if(a.getGender().equals("Masculino"))
+			spn_gender.setSelection(0);
+		else
+			spn_gender.setSelection(1);
 	}
 
 	@Override
