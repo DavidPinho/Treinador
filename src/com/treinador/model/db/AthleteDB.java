@@ -11,7 +11,7 @@ import com.treinador.model.Athlete;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.widget.ToggleButton;
+
 
 public class AthleteDB extends Dao{
 
@@ -21,7 +21,7 @@ public class AthleteDB extends Dao{
 	
 	public long insert(Athlete a){
 		ContentValues c=new ContentValues();
-		//c.put(DataBase.ATLETA_ID, a.getIdAtleta());
+		
 		c.put(DataBase.ATHLETE_NAME, a.getName());
 		c.put(DataBase.ATHLETE_GENDER, a.getGender());
 		c.put(DataBase.ATHLETE_BIRTHDATE, a.getBirthDate());
