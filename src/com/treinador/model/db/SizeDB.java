@@ -21,7 +21,7 @@ public class SizeDB extends Dao{
 		c.put(DataBase.SIZE_ATHLETE_ID, s.getIdAthlete());
 		//TODO the date will be a String?
 		c.put(DataBase.SIZE_DATE, s.getDate());
-		c.put(DataBase.SIZE_ID, s.getIdSize());
+		//c.put(DataBase.SIZE_ID, s.getIdSize());
 		c.put(DataBase.SIZE_MUSCLE_ID, s.getIdMuscle());
 		c.put(DataBase.SIZE_VALUE, s.getSizeValue());
 
