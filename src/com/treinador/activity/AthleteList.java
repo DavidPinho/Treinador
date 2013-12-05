@@ -14,6 +14,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -43,11 +47,11 @@ public class AthleteList extends Activity{
 		athletesList = athletedb.getAll();
 		adapter = new AthleteAdapter(this, R.layout.list_view_adapter_athlete,(ArrayList<Athlete>) athletesList);
 		
-		btn_new = (Button)findViewById(R.id.btn_new_athlete);
-		btn_delete = (Button)findViewById(R.id.btn_remove_athlete);
-		btn_update_list_athlete = (Button)findViewById(R.id.btn_edit_athlete);
+		//btn_new = (Button)findViewById(R.id.btn_new_athlete);
+		//btn_delete = (Button)findViewById(R.id.btn_remove_athlete);
+		//btn_update_list_athlete = (Button)findViewById(R.id.btn_edit_athlete);
 		
-		btn_new.setOnClickListener(new View.OnClickListener() {			
+		/*btn_new.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
 				Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
@@ -88,15 +92,46 @@ public class AthleteList extends Activity{
 				
 			}
 		});
-		
+		*/
 	
 		
 		listView = (ListView) findViewById(R.id.lv_athlete);
 		listView.setAdapter(adapter);
-		
+		registerForContextMenu(listView);
 		
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.actionbar_menu, menu);
+		return true;
+	}
 	
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	   
+
+		if(item.getItemId()== R.id.action_create){
+			Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
+			AthleteList.this.startActivity(intentNew);
+			AthleteList.this.finish();	
+		}
+	    return true;
+	} 
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+	    ContextMenuInfo menuInfo) {
+	  if (v.getId()==R.id.lv_athlete) {
+	    AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+	    menu.setHeaderTitle(athletesList.get(info.position).getName());
+	    String[] menuItems = getResources().getStringArray(R.array.gender);
+	    for (int i = 0; i<menuItems.length; i++) {
+	      menu.add(Menu.NONE, i, i, menuItems[i]);
+	    }
+	  }
+	}
 
 }

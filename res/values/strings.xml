@@ -27,5 +27,10 @@
     <string name="final_date">Data Final</string>
     <string name="duration">Duração</string>
     <string name="register_size">Cadastra Medida</string>
+    <string name="athlete_name">Nome</string>
+    <string name="athlete_birthdate">Data de Nascimento</string>
+    <string name="athlete_gender">Sexo</string>
+    <string name="confirm">Confirmar</string>
+    <string name="menu">Menu</string>
 
 </resources>

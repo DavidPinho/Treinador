@@ -58,6 +58,10 @@
             android:name="com.treinador.activity.RegisterSize"
             android:label="@string/register_size" >
         </activity>
+        <activity
+            android:name="com.treinador.MenuScreen"
+            android:label="@string/menu" >
+        </activity>
     </application>
 
 </manifest>

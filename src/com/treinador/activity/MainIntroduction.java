@@ -24,7 +24,7 @@ public class MainIntroduction extends Activity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(MainIntroduction.this,RegisterAthlete.class);
+                Intent mainIntent = new Intent(MainIntroduction.this,AthleteList.class);
                 MainIntroduction.this.startActivity(mainIntent);
                 MainIntroduction.this.finish();
             }

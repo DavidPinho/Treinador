@@ -45,10 +45,10 @@ public class AthleteAdapter extends ArrayAdapter<Athlete> {
   
        
         TextView nome = (TextView) view.findViewById(R.id.lbl_nome_atleta_lista);
-        CheckBox cb = (CheckBox) view.findViewById(R.id.cb_atleta_lista);  
-        cb.setTag(position);
-        cb.setOnCheckedChangeListener(myCheckChangList);
-        cb.setChecked(false);
+       // CheckBox cb = (CheckBox) view.findViewById(R.id.cb_atleta_lista);  
+      //  cb.setTag(position);
+       // cb.setOnCheckedChangeListener(myCheckChangList);
+        //cb.setChecked(false);
         
         
         

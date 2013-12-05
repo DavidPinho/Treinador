@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+ 
     
+<!-- 
 <LinearLayout
     android:id="@+id/topBar"
     android:layout_width="fill_parent"
@@ -11,7 +13,7 @@
     android:orientation="horizontal"
     android:background="@color/light_gray" >
 
-    <!-- Some Buttons -->
+    
 
     <Button
         android:id="@+id/btn_remove_athlete"
@@ -36,7 +38,7 @@
         android:layout_weight="0.33"
          android:background="@drawable/border_left"
         android:text="New" />
-</LinearLayout>
+</LinearLayout>   -->
 
 <ListView
     android:id="@+id/lv_athlete"
