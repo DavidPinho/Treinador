@@ -47,54 +47,6 @@ public class AthleteList extends Activity{
 		athletesList = athletedb.getAll();
 		adapter = new AthleteAdapter(this, R.layout.list_view_adapter_athlete,(ArrayList<Athlete>) athletesList);
 		
-		//btn_new = (Button)findViewById(R.id.btn_new_athlete);
-		//btn_delete = (Button)findViewById(R.id.btn_remove_athlete);
-		//btn_update_list_athlete = (Button)findViewById(R.id.btn_edit_athlete);
-		
-		/*btn_new.setOnClickListener(new View.OnClickListener() {			
-			@Override
-			public void onClick(View v) {
-				Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
-				AthleteList.this.startActivity(intentNew);
-				AthleteList.this.finish();		
-			}
-		});
-		
-		btn_delete.setOnClickListener(new View.OnClickListener() {			
-			@Override
-			public void onClick(View v) {
-				
-				for(Athlete athlete : adapter.getAllSelectedAthletes()){
-					if(athlete.getSelected())
-						athletedb.delete(athlete.getIdAthlete());
-				}
-				adapter.clear();
-				ArrayList<Athlete> atheletes = (ArrayList<Athlete>) athletedb.getAll();	
-				adapter.restoreList();				
-				adapter.addAll(atheletes);
-			}
-		});
-		
-		btn_update_list_athlete.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				ArrayList<Athlete> list=adapter.getAllSelectedAthletes();
-				if(list.size()>1)
-					alert.show();
-				else if(list.size()==1){
-					Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
-					intentNew.putExtra("athlete", list.get(0));
-					AthleteList.this.startActivity(intentNew);
-					AthleteList.this.finish();						
-				}
-					
-				
-			}
-		});
-		*/
-	
-		
 		listView = (ListView) findViewById(R.id.lv_athlete);
 		listView.setAdapter(adapter);
 		registerForContextMenu(listView);

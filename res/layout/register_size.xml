@@ -5,19 +5,22 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:padding="10dp" 
+        android:layout_marginBottom="10dp">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp" >
+             >
 
             <TableRow
                 android:id="@+id/tableRow_row1Value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:visibility="visible" >
+                android:visibility="visible"
+                 android:layout_marginBottom="10dp" >
 
                 <ExpandableListView
                     android:id="@+id/expListView"
@@ -29,7 +32,8 @@
             <TableRow
                 android:id="@+id/tableRow_row1Value"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                 android:layout_marginBottom="10dp" >
 
                 <TextView
                     android:id="@+id/lbl_value"
@@ -38,13 +42,14 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/value"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow_row2Value"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                 android:layout_marginBottom="5dp" >
 
                 <EditText
                     android:id="@+id/txt_value"
@@ -59,7 +64,8 @@
             <TableRow
                 android:id="@+id/tableRow_row1Date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                 android:layout_marginBottom="10dp">
 
                 <TextView
                     android:id="@+id/lbl_date"
@@ -68,13 +74,14 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/date"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow_row2Date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                 android:layout_marginBottom="5dp" >
 
                 <EditText
                     android:id="@+id/txt_date"
@@ -90,7 +97,8 @@
             <TableRow
                 android:id="@+id/tableRow_register"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                 >
 
                 <Button
                     android:id="@+id/btn_register"
@@ -100,8 +108,9 @@
                     android:gravity="center"
                     android:text="@string/btn_register"
                     android:textSize="20sp"
+                    android:textColor="@color/white"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/my_button" />
+                    android:background="@drawable/selector_button" />
             </TableRow>
         </TableLayout>
     </ScrollView>

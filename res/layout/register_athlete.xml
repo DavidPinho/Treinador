@@ -131,7 +131,7 @@
         android:id="@+id/btn_register"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/my_button"
+        android:background="@drawable/selector_button"
         android:text="@string/confirm"
         android:textColor="@color/white" 
         android:layout_weight="1"

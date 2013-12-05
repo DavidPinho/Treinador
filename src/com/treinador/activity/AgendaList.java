@@ -10,6 +10,7 @@ import com.treinador.R.layout;
 import com.treinador.R.menu;
 import com.treinador.adapter.AgendaAdapter;
 import com.treinador.adapter.MuscleAdapter;
+import com.treinador.model.Athlete;
 import com.treinador.model.Exercise;
 import com.treinador.model.Muscle;
 
@@ -17,9 +18,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -54,6 +58,7 @@ public class AgendaList extends Activity {
 		
 		listView = (ListView) findViewById(R.id.lv_agenda);
 		listView.setAdapter(adapter);
+		registerForContextMenu(listView);
 		
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
@@ -169,4 +174,41 @@ public class AgendaList extends Activity {
 	    return true;
 	} 
 
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+	  if (v.getId()==R.id.lv_agenda) {
+	    //AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+	   // menu.setHeaderTitle(athletesList.get(info.position).getName());
+		String[] menuItems = getResources().getStringArray(R.array.options_list); 
+	    for (int i = 0; i<menuItems.length; i++) {
+	      menu.add(Menu.NONE, i, i, menuItems[i]);
+	    }
+	  }
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+	  AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+	  int menuItemIndex = item.getItemId();
+	  
+	  String[] menuItems = getResources().getStringArray(R.array.options_list);
+	  String menuItemName = menuItems[menuItemIndex];
+	  
+	  Exercise exercise = exercises.get(info.position);
+	  
+	  if(menuItemName.equals(menuItems[0])){
+		  Intent intentNew = new Intent(AgendaList.this, CalendarActivities.class);
+		  //intentNew.putExtra("exercise", exercise);
+		  AgendaList.this.startActivity(intentNew);
+		  AgendaList.this.finish();
+		  
+	  }else if (menuItemName.equals(menuItems[1])) {
+		  		
+	        }else if (menuItemName.equals(menuItems[2])) {
+				
+			}
+	  
+	  return true;
+	}
 }
