@@ -27,5 +27,8 @@
     <string name="final_date">Data Final</string>
     <string name="duration">Duração</string>
     <string name="register_size">Cadastra Medida</string>
+    <string name="new_">Novo</string>
+    <string name="edit">Editar</string>
+    <string name="remove">Remover</string>
 
 </resources>

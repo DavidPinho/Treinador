@@ -1,49 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
-<LinearLayout
-    android:id="@+id/topBar"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:orientation="horizontal"
-    android:background="@color/light_gray" >
+    android:layout_height="match_parent"
+    android:background="@drawable/my_screens" >
 
-    <!-- Some Buttons -->
-
-    <Button
-        android:id="@+id/btn_remove_athlete"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:id="@+id/tableTopBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.33"
-        android:background="@color/light_gray"
-        android:text="Remove" />
+        android:layout_alignParentTop="true">
 
-    <Button
-        android:id="@+id/btn_edit_athlete"
-        android:layout_width="wrap_content"
+        <!-- Some Buttons -->
+
+        <TableRow
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_new_athlete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_rect"
+                android:text="@string/new_" 
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btn_edit_athlete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_rect"
+                android:text="@string/edit" 
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btn_remove_athlete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_rect"
+                android:text="@string/remove" 
+                android:textAlignment="center"/>
+        </TableRow>
+      </TableLayout>
+      
+
+            <ListView
+                android:id="@+id/lv_athlete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tableBelowBar"
+                android:layout_below="@+id/tableTopBar">
+            </ListView>
+
+
+    <TableLayout
+        android:id="@+id/tableBelowBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.34"
-        android:background="@drawable/border_left"
-        android:text="Edit" />
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp">
 
-    <Button
-        android:id="@+id/btn_new_athlete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.33"
-         android:background="@drawable/border_left"
-        android:text="New" />
-</LinearLayout>
+        <TableRow
+            android:id="@+id/belowBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/my_button_below_bar" >
 
-<ListView
-    android:id="@+id/lv_athlete"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_below="@+id/topBar" >
-</ListView>
+            <Button
+                android:id="@+id/btn_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_action_event"/>
+
+            <Button
+                android:id="@+id/btn_graphics"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_action_group" />
+
+            <Button
+                android:id="@+id/btn_athletes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_action_network_cell" />
+
+            <Button
+                android:id="@+id/btn_lists"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_action_view_as_list" />
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
