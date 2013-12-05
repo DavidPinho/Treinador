@@ -28,17 +28,17 @@ import android.widget.Toast;
 
 public class AthleteList extends Activity{
 	
-	ListView listView;
-	List<String> athletes = new ArrayList<String>();
+	ListView listView;	
 	AthleteDB athletedb;
-	Button btn_new;
-	Button btn_delete;
-	Button btn_update_list_athlete;
+	//Button btn_new;
+	//Button btn_delete;
+	//Button btn_update_list_athlete;
 	List<Athlete> athletesList;
 	AthleteAdapter adapter;	
 	
+	
 	protected void onCreate(Bundle savedInstanceState) {
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setTitle("Alerta").setMessage("Selecione apenas 1 atleta!").setNeutralButton("OK", null);  
+		  
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_athlete);
 		//s
@@ -122,16 +122,47 @@ public class AthleteList extends Activity{
 	} 
 
 	@Override
-	public void onCreateContextMenu(ContextMenu menu, View v,
-	    ContextMenuInfo menuInfo) {
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 	  if (v.getId()==R.id.lv_athlete) {
-	    AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-	    menu.setHeaderTitle(athletesList.get(info.position).getName());
-	    String[] menuItems = getResources().getStringArray(R.array.gender);
+	    //AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+	   // menu.setHeaderTitle(athletesList.get(info.position).getName());
+		String[] menuItems = getResources().getStringArray(R.array.options_list); 
 	    for (int i = 0; i<menuItems.length; i++) {
 	      menu.add(Menu.NONE, i, i, menuItems[i]);
 	    }
 	  }
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+	  AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+	  int menuItemIndex = item.getItemId();
+	  
+	  String[] menuItems = getResources().getStringArray(R.array.options_list);
+	  String menuItemName = menuItems[menuItemIndex];
+	  
+	  Athlete athlete = athletesList.get(info.position);
+	  
+	  if(menuItemName.equals(menuItems[0])){
+		  Intent intentNew = new Intent(AthleteList.this, CalendarActivities.class);
+		 // intentNew.putExtra("athlete", athlete);
+		  AthleteList.this.startActivity(intentNew);
+		  AthleteList.this.finish();
+		  
+	  }else if (menuItemName.equals(menuItems[1])) {
+		  		Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
+				intentNew.putExtra("athlete", athlete);
+				AthleteList.this.startActivity(intentNew);
+				AthleteList.this.finish();
+	        }else if (menuItemName.equals(menuItems[2])) {
+				athletedb.delete(athlete.getIdAthlete());
+				adapter.clear();
+				ArrayList<Athlete> atheletes = (ArrayList<Athlete>) athletedb.getAll();	
+				adapter.restoreList();				
+				adapter.addAll(atheletes);
+			}
+	  
+	  return true;
 	}
 
 }

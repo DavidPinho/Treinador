@@ -6,10 +6,17 @@
     <string name="register_athlete">Cadastrar Atleta</string>
     <string name="register_muscle">Cadastra Musculo</string>
     <string name="athletes">Atletas</string>
+    <string name="calendar_activities">Calendário de Atividades</string>
+    <string name="muscles">Músculos</string>
 
     <string-array name="gender">
         <item>Masculino</item>
         <item>Feminino</item>
+    </string-array>
+    <string-array name="options_list">
+        <item>Abrir</item>
+        <item>Atualizar</item>
+        <item>Excluir</item>
     </string-array>
 
     <string name="title_activity_introducao">Introducao</string>
@@ -27,16 +34,14 @@
     <string name="final_date">Data Final</string>
     <string name="duration">Duração</string>
     <string name="register_size">Cadastra Medida</string>
-
     <string name="athlete_name">Nome</string>
     <string name="athlete_birthdate">Data de Nascimento</string>
     <string name="athlete_gender">Sexo</string>
     <string name="confirm">Confirmar</string>
     <string name="menu">Menu</string>
-
     <string name="new_">Novo</string>
     <string name="edit">Editar</string>
     <string name="remove">Remover</string>
-
+    <string name="title_activity_muscle_list">MuscleList</string>
 
 </resources>
