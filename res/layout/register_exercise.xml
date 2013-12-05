@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/background_screens">
+    android:background="@drawable/my_screens">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/description"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textColor="#000000"/>
             </TableRow>
 
@@ -46,7 +46,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:background="@drawable/selector_edit_text" 
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textStyle="italic">
                 </EditText>
             </TableRow>
@@ -64,7 +64,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/instructions"
-                    android:textSize="30sp" 
+                    android:textSize="20sp" 
                     android:textColor="#000000" />
             </TableRow>
 
@@ -81,7 +81,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/selector_edit_text"
                     android:gravity="center" 
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textStyle="italic"/>
             </TableRow>
 
@@ -98,7 +98,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/date"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textColor="#000000"  />
             </TableRow>
 
@@ -116,7 +116,7 @@
                     android:background="@drawable/selector_edit_text"
                     android:gravity="center"
                     android:inputType="date"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textStyle="italic"/>
             </TableRow>
 
@@ -133,7 +133,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/weight"
-                    android:textSize="30sp" 
+                    android:textSize="20sp" 
                     android:textColor="#000000" />
             </TableRow>
 
@@ -151,7 +151,7 @@
                     android:background="@drawable/selector_edit_text"
                     android:gravity="center"
                     android:inputType="number" 
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textStyle="italic"/>
             </TableRow>
 
@@ -168,7 +168,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/repetitions"
-                    android:textSize="30sp" 
+                    android:textSize="20sp" 
                     android:textColor="#000000" />
             </TableRow>
 
@@ -186,7 +186,7 @@
                     android:background="@drawable/selector_edit_text"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="30sp" 
+                    android:textSize="20sp" 
                     android:textStyle="italic"/>
             </TableRow>
 
@@ -203,7 +203,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/duration"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textColor="#000000"  />
             </TableRow>
 
@@ -221,7 +221,7 @@
                     android:background="@drawable/selector_edit_text"
                     android:gravity="center"
                     android:inputType="time" 
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:textStyle="italic"/>
             </TableRow>
         </TableLayout>
@@ -247,7 +247,7 @@
                 android:background="@drawable/selector_button"
                 android:gravity="center"
                 android:text="@string/btn_register"
-                android:textSize="40sp" 
+                android:textSize="30sp" 
                 android:textColor="#000000"
                 />
         </TableRow>
