@@ -72,7 +72,11 @@
         </activity>
         <activity
             android:name="com.treinador.activity.AgendaList"
-            android:label="@string/title_activity_agenda_list" >
+            android:label="@string/agenda_list" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.ExerciseDetail"
+            android:label="@string/exercise_detail" >
         </activity>
     </application>
 

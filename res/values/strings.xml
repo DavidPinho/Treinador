@@ -9,6 +9,8 @@
     <string name="calendar_activities">Calendário de Atividades</string>
     <string name="muscles">Músculos</string>
     <string name="exercise_type">Tipo de Exercício</string>
+    <string name="agenda_list">Agenda</string>
+    <string name="exercise_detail">Exercício</string>
 
     <string-array name="gender">
         <item>Masculino</item>
@@ -46,5 +48,6 @@
     <string name="title_activity_muscle_list">MuscleList</string>
     <string name="title_activity_exercise_type_list">ExerciseTypeList</string>
     <string name="title_activity_agenda_list">AgendaList</string>
+    <string name="title_activity_exercise_detail">ExerciseDetail</string>
 
 </resources>

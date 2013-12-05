@@ -47,9 +47,17 @@ public class AgendaList extends Activity {
 		Exercise m = new Exercise();
 		m.setInstructions("Supino Reto");
 		m.setDate("10/12/2013");
+		m.setDuration(30);
+		m.setRepetitions(10);
+		m.setWeight(40);
+		m.setIdExercise(1);
 		Exercise m2 = new Exercise();
 		m2.setInstructions("Rosca Direta");
 		m2.setDate("10/12/2013");
+		m2.setDuration(60);
+		m2.setRepetitions(12);
+		m2.setWeight(35);
+		m2.setIdExercise(2);
 		exercises = new ArrayList<Exercise>();
 		exercises.add(m);
 		exercises.add(m2);
@@ -198,8 +206,8 @@ public class AgendaList extends Activity {
 	  Exercise exercise = exercises.get(info.position);
 	  
 	  if(menuItemName.equals(menuItems[0])){
-		  Intent intentNew = new Intent(AgendaList.this, CalendarActivities.class);
-		  //intentNew.putExtra("exercise", exercise);
+		  Intent intentNew = new Intent(AgendaList.this, ExerciseDetail.class);
+		  intentNew.putExtra("exercise", exercise);
 		  AgendaList.this.startActivity(intentNew);
 		  AgendaList.this.finish();
 		  

@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+        
+         <TableLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:padding="10dp" >
+
+             <TableRow 
+		       android:id="@+id/tableRow_row1Description"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content" 
+		       android:layout_marginBottom="10dp" 
+		       android:paddingTop="15dp">
+		       
+		       <TextView
+		           android:id="@+id/lbl_description"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.3"
+		           
+		           android:text="Descrição:"
+		           android:textSize="22sp" />
+		       <TextView
+		           android:id="@+id/lbl_description_value"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.7"		           
+		           android:text="Supino Reto"
+		           android:textSize="22sp" />
+
+		    </TableRow>
+		    
+             <TableRow 
+		       android:id="@+id/tableRow_row2Instructions"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content" 
+		       android:layout_marginBottom="10dp" 
+		       android:paddingTop="15dp">
+		       
+		       <TextView
+		           android:id="@+id/lbl_instructions"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.3"
+		           
+		           android:text="Instruções:"
+		           android:textSize="22sp" />
+		       <TextView
+		           android:id="@+id/lbl_instructions_value"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.7"		           
+		           android:text="Fazer Lentamente"
+		           android:textSize="22sp" />
+
+		    </TableRow>
+		    
+             
+             <TableRow 
+		       android:id="@+id/tableRow_row2Date"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content" 
+		       android:layout_marginBottom="10dp" 
+		       android:paddingTop="15dp">
+		       
+		       <TextView
+		           android:id="@+id/lbl_date_exercise_detail"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.3"
+		           
+		           android:text="Data:"
+		           android:textSize="22sp" />
+		       <TextView
+		           android:id="@+id/lbl_date_value"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.7"		           
+		           android:text="22/10/2013"
+		           android:textSize="22sp" />
+
+		    </TableRow>
+		    
+            <TableRow 
+		       android:id="@+id/tableRow_row2Weight"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content" 
+		       android:layout_marginBottom="10dp" 
+		       android:paddingTop="15dp">
+		       
+		       <TextView
+		           android:id="@+id/lbl_weight_exercise_detail"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.3"
+		           
+		           android:text="Peso:"
+		           android:textSize="22sp" />
+		       <TextView
+		           android:id="@+id/lbl_weight_exercise_detail_value"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.7"		           
+		           android:text="80 KG"
+		           android:textSize="22sp" />
+
+		    </TableRow>
+		    
+            <TableRow 
+		       android:id="@+id/tableRow_row2Repetitions"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content" 
+		       android:layout_marginBottom="10dp" 
+		       android:paddingTop="15dp">
+		       
+		       <TextView
+		           android:id="@+id/lbl_repetitions_exercise_detail"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.3"
+		           
+		           android:text="Repetições:"
+		           android:textSize="22sp" />
+		       <TextView
+		           android:id="@+id/lbl_repetitions_exercise_detail_value"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.7"		           
+		           android:text="10"
+		           android:textSize="22sp" />
+
+		    </TableRow>
+		    
+            <TableRow 
+		       android:id="@+id/tableRow_row2Duration"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content" 
+		       android:layout_marginBottom="10dp" 
+		       android:paddingTop="15dp">
+		       
+		       <TextView
+		           android:id="@+id/lbl_duration_exercise_detail"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.3"
+		           
+		           android:text="Duração:"
+		           android:textSize="22sp" />
+		       <TextView
+		           android:id="@+id/lbl_duration_exercise_detail_value"
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:layout_weight="0.7"		           
+		           android:text="4 series"
+		           android:textSize="22sp" />
+
+		    </TableRow>		    
+		    
+		</TableLayout>     
+	</ScrollView>
+   
+    
+     <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:orientation="horizontal" >
+	
+	  <ImageButton
+	      android:id="@+id/btn_calendar"
+	      android:src="@drawable/ic_action_event"
+	      android:layout_width="match_parent"
+	      android:layout_height="match_parent"
+	      android:layout_weight="1"
+	      android:background="@color/black"	
+	        
+	      />
+	  
+	  
+	   <ImageButton
+                android:id="@+id/btn_athletes"
+                android:src="@drawable/ic_action_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                
+                 />
+
+        <ImageButton
+            android:id="@+id/btn_graphics"
+            android:src="@drawable/ic_action_network_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black"
+            
+            />
+
+        <ImageButton
+            android:id="@+id/btn_lists"
+            android:src="@drawable/ic_action_view_as_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black" />    
+
+   
+</LinearLayout>   
+    
+
+</RelativeLayout>
