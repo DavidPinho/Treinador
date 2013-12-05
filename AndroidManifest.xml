@@ -66,6 +66,14 @@
             android:name="com.treinador.activity.MuscleList"
             android:label="@string/muscles" >
         </activity>
+        <activity
+            android:name="com.treinador.activity.ExerciseTypeList"
+            android:label="@string/exercise_type" >
+        </activity>
+        <activity
+            android:name="com.treinador.activity.AgendaList"
+            android:label="@string/title_activity_agenda_list" >
+        </activity>
     </application>
 
 </manifest>

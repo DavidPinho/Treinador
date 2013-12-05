@@ -12,7 +12,7 @@ import android.database.Cursor;
 
 public class ExerciseTypeDB extends Dao {
 
-	protected ExerciseTypeDB(Context ctx) {
+	public ExerciseTypeDB(Context ctx) {
 		super(ctx);
 	}
 	

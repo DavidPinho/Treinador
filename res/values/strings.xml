@@ -8,6 +8,7 @@
     <string name="athletes">Atletas</string>
     <string name="calendar_activities">Calendário de Atividades</string>
     <string name="muscles">Músculos</string>
+    <string name="exercise_type">Tipo de Exercício</string>
 
     <string-array name="gender">
         <item>Masculino</item>
@@ -43,5 +44,7 @@
     <string name="edit">Editar</string>
     <string name="remove">Remover</string>
     <string name="title_activity_muscle_list">MuscleList</string>
+    <string name="title_activity_exercise_type_list">ExerciseTypeList</string>
+    <string name="title_activity_agenda_list">AgendaList</string>
 
 </resources>
