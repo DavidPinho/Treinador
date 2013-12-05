@@ -3,49 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
  
-    
-<!-- 
-<LinearLayout
-    android:id="@+id/topBar"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:orientation="horizontal"
-    android:background="@color/light_gray" >
+     <ListView
+         android:id="@+id/lv_athlete"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" >
 
-    
-
-    <Button
-        android:id="@+id/btn_remove_athlete"
-        android:layout_width="wrap_content"
+     </ListView>
+     
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.33"
-        android:background="@color/light_gray"
-        android:text="Remove" />
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:orientation="horizontal" >
+	
+	  <ImageButton
+	      android:id="@+id/btn_calendar"
+	      android:src="@drawable/ic_action_event"
+	      android:layout_width="match_parent"
+	      android:layout_height="match_parent"
+	      android:layout_weight="1"
+	      android:background="@color/black"	      
+	      />
+	  
+	  
+	   <ImageButton
+                android:id="@+id/btn_graphics"
+                android:src="@drawable/ic_action_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                 />
 
-    <Button
-        android:id="@+id/btn_edit_athlete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.34"
-        android:background="@drawable/border_left"
-        android:text="Edit" />
+        <ImageButton
+            android:id="@+id/btn_athletes"
+            android:src="@drawable/ic_action_network_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black"
+            />
 
-    <Button
-        android:id="@+id/btn_new_athlete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.33"
-         android:background="@drawable/border_left"
-        android:text="New" />
-</LinearLayout>   -->
+        <ImageButton
+            android:id="@+id/btn_lists"
+            android:src="@drawable/ic_action_view_as_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black" />    
 
-<ListView
-    android:id="@+id/lv_athlete"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_below="@+id/topBar" >
-</ListView>
+   
+</LinearLayout>   
+     
+         
+
+
+   
 
 </RelativeLayout>

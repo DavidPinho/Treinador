@@ -11,7 +11,8 @@ import com.treinador.model.Athlete;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.provider.ContactsContract.Contacts.Data;
+
+
 
 
 public class AthleteDB extends Dao{
