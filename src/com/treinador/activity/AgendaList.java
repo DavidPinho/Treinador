@@ -8,9 +8,9 @@ import net.londatiga.android.QuickAction;
 import com.treinador.R;
 import com.treinador.R.layout;
 import com.treinador.R.menu;
-import com.treinador.adapter.AthleteAdapter;
+import com.treinador.adapter.AgendaAdapter;
 import com.treinador.adapter.MuscleAdapter;
-import com.treinador.model.Athlete;
+import com.treinador.model.Exercise;
 import com.treinador.model.Muscle;
 
 import android.os.Bundle;
@@ -23,32 +23,36 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-public class MuscleList extends Activity {
-
+public class AgendaList extends Activity {
 	
 	ListView listView;
-	MuscleAdapter adapter;	
+	AgendaAdapter adapter;	
 	ImageButton btn_calendar;
 	ImageButton btn_athletes;
 	ImageButton btn_graphics;
 	ImageButton btn_lists;
-	ArrayList<Muscle> muscles;
+	ArrayList<Exercise> exercises;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.list_view_muscle);
+		setContentView(R.layout.list_view_agenda);
+		
+		
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
-		Muscle m = new Muscle();
-		m.setDescription("Bíceps");
-		Muscle m2 = new Muscle();
-		m2.setDescription("Tríceps");
-		muscles = new ArrayList<Muscle>();
-		muscles.add(m);
-		muscles.add(m2);
+		Exercise m = new Exercise();
+		m.setInstructions("Supino Reto");
+		m.setDate("10/12/2013");
+		Exercise m2 = new Exercise();
+		m2.setInstructions("Rosca Direta");
+		m2.setDate("10/12/2013");
+		exercises = new ArrayList<Exercise>();
+		exercises.add(m);
+		exercises.add(m2);
 		
-		adapter = new MuscleAdapter(this, R.layout.list_view_adapter_muscle, muscles);
+		adapter = new AgendaAdapter(this, R.layout.list_view_adapter_agenda, exercises);
 		
-		listView = (ListView) findViewById(R.id.lv_muscle);
+		listView = (ListView) findViewById(R.id.lv_agenda);
 		listView.setAdapter(adapter);
 		
 		
@@ -85,9 +89,9 @@ public class MuscleList extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intentNew = new Intent(MuscleList.this, CalendarActivities.class);
-				MuscleList.this.startActivity(intentNew);
-				MuscleList.this.finish();	
+				Intent intentNew = new Intent(AgendaList.this, CalendarActivities.class);
+				AgendaList.this.startActivity(intentNew);
+				AgendaList.this.finish();	
 				
 			}
 		});
@@ -96,9 +100,9 @@ public class MuscleList extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intentNew = new Intent(MuscleList.this, AthleteList.class);
-				MuscleList.this.startActivity(intentNew);
-				MuscleList.this.finish();				
+				Intent intentNew = new Intent(AgendaList.this, AthleteList.class);
+				AgendaList.this.startActivity(intentNew);
+				AgendaList.this.finish();				
 			}
 		});
 		
@@ -128,29 +132,27 @@ public class MuscleList extends Activity {
 				if(pos==0){
 					
 				}else if (pos==1) {
-					Intent intentNew = new Intent(MuscleList.this, ExerciseTypeList.class);
-					MuscleList.this.startActivity(intentNew);
-					MuscleList.this.finish();
+					Intent intentNew = new Intent(AgendaList.this, ExerciseTypeList.class);
+					AgendaList.this.startActivity(intentNew);
+					AgendaList.this.finish();
 				}else if (pos==2) {
 					
 				}else if (pos==3) {
-					/*Intent intentNew = new Intent(MuscleList.this, MuscleList.class);
-					MuscleList.this.startActivity(intentNew);
-					MuscleList.this.finish();*/
+					Intent intentNew = new Intent(AgendaList.this, MuscleList.class);
+					AgendaList.this.startActivity(intentNew);
+					AgendaList.this.finish();
 				}
 				
 			}
 		});
-
+		
+		
+		
 	}
-	
-
-	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		
 		getMenuInflater().inflate(R.menu.actionbar_menu, menu);
 		return true;
 	}
@@ -160,12 +162,11 @@ public class MuscleList extends Activity {
 	   
 
 		if(item.getItemId()== R.id.action_create){
-			Intent intentNew = new Intent(MuscleList.this, RegisterMuscle.class);
-			MuscleList.this.startActivity(intentNew);
-			MuscleList.this.finish();	
+			Intent intentNew = new Intent(AgendaList.this, RegisterExercise.class);
+			AgendaList.this.startActivity(intentNew);
+			AgendaList.this.finish();	
 		}
 	    return true;
 	} 
-
 
 }
