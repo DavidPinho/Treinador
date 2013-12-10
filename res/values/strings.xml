@@ -11,6 +11,8 @@
     <string name="exercise_type">Tipo de Exercício</string>
     <string name="agenda_list">Agenda</string>
     <string name="exercise_detail">Exercício</string>
+    <string name="mark">Marco</string>
+    <string name="size">Medidas</string>
 
     <string-array name="gender">
         <item>Masculino</item>

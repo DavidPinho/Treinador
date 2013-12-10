@@ -44,7 +44,7 @@ public class SizeAdapter extends ArrayAdapter<Size>{
      Size size = getSize(position);
 
     
-     TextView name = (TextView) view.findViewById(R.id.lbl_name_muscle);
+     TextView name = (TextView) view.findViewById(R.id.lbl_name_size);
      
      // Muscle muscle = new Muscle();
      //muscle.setIdMuscle(size.getIdMuscle());

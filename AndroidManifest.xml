@@ -36,11 +36,11 @@
         </activity>
         <activity
             android:name="com.treinador.activity.RegisterExercise"
-            android:label="@string/app_name" >
+            android:label="@string/exercise_detail" >
         </activity>
         <activity
             android:name="com.treinador.activity.RegisterMark"
-            android:label="@string/app_name" >
+            android:label="@string/mark" >
         </activity>
         <activity
             android:name="com.treinador.activity.RegisterExerciseType"
@@ -77,6 +77,14 @@
         <activity
             android:name="com.treinador.activity.ExerciseDetail"
             android:label="@string/exercise_detail" >
+        </activity>
+        <activity 
+            android:name="com.treinador.activity.MarkList"
+            android:label="@string/mark" >            
+        </activity>
+         <activity 
+            android:name="com.treinador.activity.SizeList"
+            android:label="@string/size" >            
         </activity>
     </application>
 

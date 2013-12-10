@@ -98,12 +98,18 @@ public class CalendarActivities extends Activity{
 			@Override
 			public void onItemClick(QuickAction source, int pos, int actionId) {
 				if(pos==0){
+					Intent intentNew = new Intent(CalendarActivities.this, SizeList.class);
+					CalendarActivities.this.startActivity(intentNew);
+					CalendarActivities.this.finish();	
 					
 				}else if (pos==1) {
 					Intent intentNew = new Intent(CalendarActivities.this, ExerciseTypeList.class);
 					CalendarActivities.this.startActivity(intentNew);
 					CalendarActivities.this.finish();					
 				}else if (pos==2) {
+					Intent intentNew = new Intent(CalendarActivities.this, MarkList.class);
+					CalendarActivities.this.startActivity(intentNew);
+					CalendarActivities.this.finish();	
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(CalendarActivities.this, MuscleList.class);
