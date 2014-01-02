@@ -79,7 +79,8 @@ public class SizeList extends Activity {
 
 		
 		final QuickAction mQuickAction  = new QuickAction(this);
-		 
+		
+				 
 		mQuickAction.addActionItem(size);
 		mQuickAction.addActionItem(exercise);
 		mQuickAction.addActionItem(mark);

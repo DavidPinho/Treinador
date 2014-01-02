@@ -6,13 +6,8 @@ public class Mark {
 	private String description;
 	private String initialDate;
 	private String finalDate;
-	private boolean selected;
+		
 	
-	public Mark() {
-		this.selected = false;
-	}
-
-
 	public int getIdMark() {
 		return idMark;
 	}
@@ -67,14 +62,7 @@ public class Mark {
 		// TODO Auto-generated method stub
 		return description;
 	}
-	
-	public Boolean getSelected() {
-		return selected;
-	}
-	public void setSelected(Boolean selected) {
-		this.selected = selected;
-	}
-	
+		
 	
 	
 }

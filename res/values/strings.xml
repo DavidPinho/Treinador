@@ -23,6 +23,10 @@
         <item>Atualizar</item>
         <item>Excluir</item>
     </string-array>
+    <string-array name="options_list_2">
+        <item>Atualizar</item>
+        <item>Excluir</item>
+    </string-array>
 
     <string name="title_activity_introducao">Introducao</string>
     <string name="hello_world">Hello world!</string>

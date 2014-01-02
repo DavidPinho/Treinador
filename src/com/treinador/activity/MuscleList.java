@@ -12,14 +12,18 @@ import com.treinador.adapter.AthleteAdapter;
 import com.treinador.adapter.MuscleAdapter;
 import com.treinador.model.Athlete;
 import com.treinador.model.Muscle;
+import com.treinador.model.db.MuscleDB;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -33,23 +37,23 @@ public class MuscleList extends Activity {
 	ImageButton btn_graphics;
 	ImageButton btn_lists;
 	ArrayList<Muscle> muscles;
+	MuscleDB muscleDB;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_muscle);
+		muscleDB = new MuscleDB(getApplicationContext());
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
-		Muscle m = new Muscle();
-		m.setDescription("Bíceps");
-		Muscle m2 = new Muscle();
-		m2.setDescription("Tríceps");
-		muscles = new ArrayList<Muscle>();
-		muscles.add(m);
-		muscles.add(m2);
+		
+		
+		muscles = (ArrayList<Muscle>) muscleDB.getAll();
 		
 		adapter = new MuscleAdapter(this, R.layout.list_view_adapter_muscle, muscles);
 		
 		listView = (ListView) findViewById(R.id.lv_muscle);
 		listView.setAdapter(adapter);
+		registerForContextMenu(listView);
 		
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
@@ -126,13 +130,17 @@ public class MuscleList extends Activity {
 			@Override
 			public void onItemClick(QuickAction source, int pos, int actionId) {
 				if(pos==0){
-					
+					Intent intentNew = new Intent(MuscleList.this, SizeList.class);
+					MuscleList.this.startActivity(intentNew);
+					MuscleList.this.finish();	
 				}else if (pos==1) {
 					Intent intentNew = new Intent(MuscleList.this, ExerciseTypeList.class);
 					MuscleList.this.startActivity(intentNew);
 					MuscleList.this.finish();
 				}else if (pos==2) {
-					
+					Intent intentNew = new Intent(MuscleList.this, MarkList.class);
+					MuscleList.this.startActivity(intentNew);
+					MuscleList.this.finish();	
 				}else if (pos==3) {
 					/*Intent intentNew = new Intent(MuscleList.this, MuscleList.class);
 					MuscleList.this.startActivity(intentNew);
@@ -163,9 +171,48 @@ public class MuscleList extends Activity {
 			Intent intentNew = new Intent(MuscleList.this, RegisterMuscle.class);
 			MuscleList.this.startActivity(intentNew);
 			MuscleList.this.finish();	
+			
 		}
 	    return true;
 	} 
+	
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+	  if (v.getId()==R.id.lv_muscle) {
+		String[] menuItems = getResources().getStringArray(R.array.options_list_2); 
+	    for (int i = 0; i<menuItems.length; i++) {
+	      menu.add(Menu.NONE, i, i, menuItems[i]);
+	    }
+	  }
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+	  AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+	  int menuItemIndex = item.getItemId();
+	  
+	  String[] menuItems = getResources().getStringArray(R.array.options_list_2);
+	  String menuItemName = menuItems[menuItemIndex];
+	  
+	  Muscle muscle = muscles.get(info.position);
+	  
+	  if(menuItemName.equals(menuItems[0])){
+		  Intent intentNew = new Intent(MuscleList.this, RegisterMuscle.class);
+			intentNew.putExtra("muscle", muscle);
+			MuscleList.this.startActivity(intentNew);
+			MuscleList.this.finish();
+		  
+	  }else if (menuItemName.equals(menuItems[1])) {
+		  	muscleDB.delete(muscle.getIdMuscle());
+			adapter.clear();
+			ArrayList<Muscle> musclesDelete = (ArrayList<Muscle>) muscleDB.getAll();	
+			adapter.restoreList();				
+			adapter.addAll(musclesDelete);
+	        }
+	  
+	  return true;
+	}
 
 
 }

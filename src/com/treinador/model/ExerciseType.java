@@ -1,6 +1,8 @@
 package com.treinador.model;
 
-public class ExerciseType {
+import java.io.Serializable;
+
+public class ExerciseType implements Serializable{
 	
 	private int idExerciseType;
 	private String description;

@@ -45,7 +45,7 @@ public class DataBase {
 					+ " text not null);",
 
 			"CREATE TABLE IF NOT EXISTS " + TB_MUSCLE + "(" + MUSCLE_ID
-					+ " integer not null primary key," + "" + MUSCLE_DESCRIPTION + " text not null);",
+					+ " integer not null primary key autoincrement," + "" + MUSCLE_DESCRIPTION + " text not null);",
 					
 			"CREATE TABLE IF NOT EXISTS " + TB_SIZE+ "(" + SIZE_ID
 					+ " integer not null primary key autoincrement," + "" + SIZE_DATE
@@ -86,7 +86,7 @@ public class DataBase {
 	private SQLiteDatabase db;
 	private SQLiteHelper dbHelper;
 
-	public DataBase(Context c) {
+	private DataBase(Context c) {
 		dbHelper = new SQLiteHelper(c, "treinador", 30, CREATE_SQL);
 		setDB(dbHelper.getWritableDatabase());
 	}

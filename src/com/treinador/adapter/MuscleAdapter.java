@@ -60,5 +60,9 @@ public class MuscleAdapter  extends ArrayAdapter<Muscle>{
 			return muscles.get(position);
 		}
 
+		
+		public void restoreList(){
+			muscles.clear();
+		}
 
 }

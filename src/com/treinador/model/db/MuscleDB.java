@@ -11,7 +11,7 @@ import android.database.Cursor;
 
 public class MuscleDB extends Dao{
 
-	protected MuscleDB(Context ctx) {
+	public MuscleDB(Context ctx) {
 		super(ctx);
 	}
 
@@ -28,7 +28,7 @@ public class MuscleDB extends Dao{
 
 	public List<Muscle> getAll(){
 
-		Cursor c = db.getDB().query(DataBase.TB_MUSCLE, null, null, null, null, null, null);
+		Cursor c = db.getDB().query(DataBase.TB_MUSCLE, null, null, null, null, null, DataBase.MUSCLE_DESCRIPTION);
 
 		List<Muscle> muscles = new ArrayList<Muscle>();
 
