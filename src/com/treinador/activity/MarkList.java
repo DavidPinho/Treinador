@@ -1,6 +1,8 @@
 package com.treinador.activity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import net.londatiga.android.ActionItem;
 import net.londatiga.android.QuickAction;
@@ -48,6 +50,7 @@ public class MarkList extends Activity {
 		markDB = new MarkDB(getApplicationContext());
 		
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		
 		
 		marks = (ArrayList<Mark>) markDB.getAll();
 		
@@ -186,7 +189,7 @@ public class MarkList extends Activity {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 	  if (v.getId()==R.id.lv_mark) {
-		String[] menuItems = getResources().getStringArray(R.array.options_list_2); 
+		String[] menuItems = {"Finalizar", "Atualizar", "Excluir"};
 	    for (int i = 0; i<menuItems.length; i++) {
 	      menu.add(Menu.NONE, i, i, menuItems[i]);
 	    }
@@ -198,18 +201,30 @@ public class MarkList extends Activity {
 	  AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
 	  int menuItemIndex = item.getItemId();
 	  
-	  String[] menuItems = getResources().getStringArray(R.array.options_list_2);
+	  String[] menuItems = {"Finalizar", "Atualizar", "Excluir"};
 	  String menuItemName = menuItems[menuItemIndex];
 	  
 	  Mark mark = marks.get(info.position);
 	  
+	  
 	  if(menuItemName.equals(menuItems[0])){
-		  Intent intentNew = new Intent(MarkList.this, RegisterMark.class);
+		  if(mark.getFinalDate()==null || mark.getFinalDate().equals("")){
+			  SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
+			  mark.setFinalDate(simpleDate.format(new Date(System.currentTimeMillis())));
+			  markDB.update(mark);
+		  }
+		  else{
+			  AlertDialog.Builder alert2 = new AlertDialog.Builder(this).setMessage("Marco já finalizado!").setNeutralButton("OK", null);
+			  alert2.show();
+		  }		  
+		  
+	  }else if(menuItemName.equals(menuItems[1])){
+		    Intent intentNew = new Intent(MarkList.this, RegisterMark.class);
 			intentNew.putExtra("mark", mark);
 			MarkList.this.startActivity(intentNew);
 			MarkList.this.finish();
 		  
-	  }else if (menuItemName.equals(menuItems[1])) {
+	  }else if (menuItemName.equals(menuItems[2])) {
 		  	markDB.delete(mark.getIdMark());
 			adapter.clear();
 			ArrayList<Mark> marksDelete = (ArrayList<Mark>) markDB.getAll();	
