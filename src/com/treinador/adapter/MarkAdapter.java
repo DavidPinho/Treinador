@@ -69,6 +69,9 @@ public class MarkAdapter extends ArrayAdapter<Mark> {
 	}
 
 
+	public void restoreList(){
+		marks.clear();
+	}
 	
 	
 

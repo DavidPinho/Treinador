@@ -143,12 +143,18 @@ public class AgendaList extends Activity {
 			@Override
 			public void onItemClick(QuickAction source, int pos, int actionId) {
 				if(pos==0){
+					Intent intentNew = new Intent(AgendaList.this, SizeList.class);
+					AgendaList.this.startActivity(intentNew);
+					AgendaList.this.finish();	
 					
 				}else if (pos==1) {
 					Intent intentNew = new Intent(AgendaList.this, ExerciseTypeList.class);
 					AgendaList.this.startActivity(intentNew);
 					AgendaList.this.finish();
 				}else if (pos==2) {
+					Intent intentNew = new Intent(AgendaList.this, MarkList.class);
+					AgendaList.this.startActivity(intentNew);
+					AgendaList.this.finish();
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(AgendaList.this, MuscleList.class);

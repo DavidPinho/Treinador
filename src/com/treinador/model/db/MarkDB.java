@@ -32,7 +32,7 @@ public class MarkDB extends Dao {
 
 	public List<Mark> getAll(){
 
-		Cursor c = db.getDB().query(DataBase.TB_MARK, null, null, null, null, null, null);
+		Cursor c = db.getDB().query(DataBase.TB_MARK, null, null, null, null, null, DataBase.MARK_NAME);
 
 		List<Mark> marks = new ArrayList<Mark>();
 
@@ -75,8 +75,8 @@ public class MarkDB extends Dao {
 		    
 		   Mark mark = new Mark();
 		    
-		    for(int i= 0;i<c.getCount();i++){
-		    	c.moveToPosition(i);
+		    
+		    	c.moveToPosition(0);
 		    		    	
 		    	mark.setIdMark(c.getInt(c.getColumnIndex(DataBase.MARK_ID)));
 		    	mark.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.MARK_ATHLETE_ID)));
@@ -84,7 +84,7 @@ public class MarkDB extends Dao {
 		    	mark.setInitialDate(c.getString(c.getColumnIndex(DataBase.MARK_INITIAL_DATE)));
 				mark.setFinalDate(c.getString(c.getColumnIndex(DataBase.MARK_FINAL_DATE)));
 		    	
-		    } 	
+		    	
 		   		    
 		    return mark;
 		
