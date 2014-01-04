@@ -43,7 +43,7 @@ public class AgendaList extends Activity {
 		setContentView(R.layout.list_view_agenda);
 		
 		
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Grï¿½ficos em breve!").setNeutralButton("OK", null);
 		Exercise m = new Exercise();
 		m.setInstructions("Supino Reto");
 		m.setDate("10/12/2013");
@@ -79,7 +79,7 @@ public class AgendaList extends Activity {
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exercício");
+		exercise.setTitle("Exercï¿½cio");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -87,7 +87,7 @@ public class AgendaList extends Activity {
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("Músculo");
+		muscle.setTitle("Mï¿½sculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
 		

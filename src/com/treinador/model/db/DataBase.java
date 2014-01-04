@@ -65,7 +65,7 @@ public class DataBase {
 					+ "("+MARK_ATHLETE_ID+"));",
 					
 			"CREATE TABLE IF NOT EXISTS " + TB_EXERCISE_TYPE + "(" + EXERCISE_TYPE_ID
-					+ " integer not null primary key," + "" + EXERCISE_TYPE_NAME + " text not null);",
+					+ " integer not null primary key autoincrement," + "" + EXERCISE_TYPE_NAME + " text not null);",
 					
 			
 			"CREATE TABLE IF NOT EXISTS " + TB_EXERCISE+ "(" + EXERCISE_ID
