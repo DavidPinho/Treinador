@@ -11,7 +11,7 @@ import android.database.Cursor;
 
 public class SizeDB extends Dao{
 
-	protected SizeDB(Context ctx) {
+	public SizeDB(Context ctx) {
 		super(ctx);
 	}
 
@@ -31,9 +31,9 @@ public class SizeDB extends Dao{
 
 	}
 
-	public List<Size> getAll(){
+	public List<Size> getAll(int id){
 
-		Cursor c = db.getDB().query(DataBase.TB_SIZE, null, null, null, null, null, null);
+		Cursor c = db.getDB().query(DataBase.TB_SIZE, null, DataBase.SIZE_ATHLETE_ID+"=?",  new String[] {Integer.toString(id)}, null, null, null);
 
 		List<Size> sizes = new ArrayList<Size>();
 

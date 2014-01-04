@@ -18,7 +18,7 @@ public class MarkDB extends Dao {
 	public long insert (Mark m){
 		ContentValues c = new ContentValues();
 
-		c.put(DataBase.MARK_ID, m.getIdMark());
+		
 		c.put(DataBase.MARK_ATHLETE_ID, m.getIdAthlete());
 		c.put(DataBase.MARK_NAME, m.getDescription());
 		c.put(DataBase.MARK_INITIAL_DATE, m.getInitialDate());

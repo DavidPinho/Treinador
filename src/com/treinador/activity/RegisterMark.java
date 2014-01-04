@@ -19,6 +19,8 @@ public class RegisterMark extends Activity{
 	
 	
 	EditText txt_description;
+	EditText txt_initial_date;
+	EditText txt_final_date;
 	Button btn_register;
 	int id;
 	boolean update;
@@ -27,15 +29,20 @@ public class RegisterMark extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_mark);
+		
 
-		btn_register = (Button) findViewById(R.id.btn_register);
-		txt_description = (EditText) findViewById(R.id.txt_description);
+		btn_register = (Button) findViewById(R.id.btn_buttonRegister_MarkRegister);
+		txt_description = (EditText) findViewById(R.id.txt_row2Description_MarkRegister);
+		txt_initial_date = (EditText) findViewById(R.id.txt_row2Date_MarkRegister);
+		txt_final_date = (EditText) findViewById(R.id.txt_row2FinalDate_MarkRegister);
 		
 		Mark mark = (Mark) getIntent().getSerializableExtra("mark");
 		
 		update=false;
 		if(mark !=null){
 			txt_description.setText(mark.getDescription());
+			txt_final_date.setText(mark.getFinalDate());
+			txt_initial_date.setText(mark.getInitialDate());
 			id= mark.getIdMark();
 			update=true;
 		}
@@ -48,6 +55,9 @@ public class RegisterMark extends Activity{
 			public void onClick(View v) {
 				Mark m = new Mark();
 				m.setDescription(txt_description.getText().toString());
+				m.setInitialDate(txt_initial_date.getText().toString());
+				m.setFinalDate(txt_final_date.getText().toString());
+				m.setIdAthlete(AthleteList.athleteSelected.getIdAthlete());
 				
 				MarkDB markDB = new MarkDB(getApplicationContext());
 				if(update){

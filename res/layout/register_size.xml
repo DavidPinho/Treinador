@@ -20,13 +20,17 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:visibility="visible"
-                 android:layout_marginBottom="10dp" >
+                android:layout_marginBottom="10dp" >
+                 
+                 <Spinner
+                    android:id="@+id/spn_muscle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_rect"
+                    android:gravity="center"
+                    android:prompt="@string/spn_muscle_tittle" />
 
-                <ExpandableListView
-                    android:id="@+id/expListView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
-                </ExpandableListView>
             </TableRow>
 
             <TableRow
@@ -101,7 +105,7 @@
                  >
 
                 <Button
-                    android:id="@+id/btn_register"
+                    android:id="@+id/btn_register_size"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

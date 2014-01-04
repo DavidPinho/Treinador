@@ -35,13 +35,14 @@ public class AthleteList extends Activity{
 	//Button btn_update_list_athlete;
 	List<Athlete> athletesList;
 	AthleteAdapter adapter;	
+	public static Athlete athleteSelected;
 	
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		  
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_athlete);
-		//s
+		athleteSelected=null;
 		
 		athletedb = new AthleteDB(getApplicationContext());
 		athletesList = athletedb.getAll();
@@ -98,6 +99,7 @@ public class AthleteList extends Activity{
 	  if(menuItemName.equals(menuItems[0])){
 		  Intent intentNew = new Intent(AthleteList.this, CalendarActivities.class);
 		 // intentNew.putExtra("athlete", athlete);
+		  athleteSelected = athlete;
 		  AthleteList.this.startActivity(intentNew);
 		  AthleteList.this.finish();
 		  

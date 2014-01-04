@@ -13,6 +13,7 @@
     <string name="exercise_detail">Exercício</string>
     <string name="mark">Marco</string>
     <string name="size">Medidas</string>
+    <string name="spn_muscle_tittle">Músculo</string>
 
     <string-array name="gender">
         <item>Masculino</item>
