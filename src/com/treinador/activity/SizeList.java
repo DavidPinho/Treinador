@@ -12,6 +12,7 @@ import com.treinador.adapter.MuscleAdapter;
 import com.treinador.adapter.SizeAdapter;
 import com.treinador.model.Muscle;
 import com.treinador.model.Size;
+import com.treinador.model.db.SizeDB;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -32,6 +33,7 @@ public class SizeList extends Activity {
 	ImageButton btn_graphics;
 	ImageButton btn_lists;
 	ArrayList<Size> sizes;
+	SizeDB sizeDB;
 	
 	
 	@Override
@@ -39,17 +41,11 @@ public class SizeList extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_size);
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		sizeDB = new SizeDB(getApplicationContext());
 		
-		Size s = new Size();
-		s.setDate("20/10/2013");
-		Size s2 = new Size();
-		s2.setDate("30/11/2013");
+		sizes = (ArrayList<Size>) sizeDB.getAll(AthleteList.athleteSelected.getIdAthlete());
 		
-		sizes = new ArrayList<Size>();
-		sizes.add(s);
-		sizes.add(s2);
-
-		
+			
 		adapter = new SizeAdapter(this, R.layout.list_view_adapter_size, sizes);
 		
 		listView = (ListView) findViewById(R.id.lv_size);
@@ -137,9 +133,14 @@ public class SizeList extends Activity {
 					SizeList.this.startActivity(intentNew);
 					SizeList.this.finish();
 				}else if (pos==2) {
+					Intent intentNew = new Intent(SizeList.this, MarkList.class);
+					SizeList.this.startActivity(intentNew);
+					SizeList.this.finish();	
 					
 				}else if (pos==3) {
-					
+					Intent intentNew = new Intent(SizeList.this, MuscleList.class);
+					SizeList.this.startActivity(intentNew);
+					SizeList.this.finish();	
 				}
 				
 			}
