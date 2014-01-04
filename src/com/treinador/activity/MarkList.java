@@ -10,15 +10,19 @@ import com.treinador.R.layout;
 import com.treinador.R.menu;
 import com.treinador.adapter.MarkAdapter;
 import com.treinador.model.Mark;
+import com.treinador.model.db.MarkDB;
 
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -27,6 +31,8 @@ public class MarkList extends Activity {
 	ListView listView;
 	ArrayList<Mark> marks;
 	MarkAdapter adapter;
+	MarkDB markDB;
+	
 	
 	ImageButton btn_calendar;
 	ImageButton btn_athletes;
@@ -34,29 +40,23 @@ public class MarkList extends Activity {
 	ImageButton btn_lists;
 	
 	
-	
-	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_mark);
 		
+		markDB = new MarkDB(getApplicationContext());
+		
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
-		Mark m = new Mark();
-		m.setDescription("Marco 1");
-		Mark m2 = new Mark();
-		m2.setDescription("Marco 2");
-		marks = new ArrayList<Mark>();
-		marks.add(m);
-		marks.add(m2);
+		
+		marks = (ArrayList<Mark>) markDB.getAll();
 		
 		
 		adapter = new MarkAdapter(this, R.layout.list_view_adapter_mark, (ArrayList<Mark>) marks);
 		
 		listView = (ListView) findViewById(R.id.lv_mark);
 		listView.setAdapter(adapter);
-	
+		registerForContextMenu(listView);
 		
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
@@ -133,17 +133,25 @@ public class MarkList extends Activity {
 			@Override
 			public void onItemClick(QuickAction source, int pos, int actionId) {
 				if(pos==0){
+					Intent intentNew = new Intent(MarkList.this, SizeList.class);
+					MarkList.this.startActivity(intentNew);
+					MarkList.this.finish();	
 					
 				}else if (pos==1) {
 					Intent intentNew = new Intent(MarkList.this, ExerciseTypeList.class);
 					MarkList.this.startActivity(intentNew);
 					MarkList.this.finish();
 				}else if (pos==2) {
+					/*
+					Intent intentNew = new Intent(MarkList.this, MarkList.class);
+					MarkList.this.startActivity(intentNew);
+					MarkList.this.finish();
+					*/	
 					
 				}else if (pos==3) {
-					/*Intent intentNew = new Intent(MarkList.this, MuscleList.class);
+					Intent intentNew = new Intent(MarkList.this, MuscleList.class);
 					MarkList.this.startActivity(intentNew);
-					MarkList.this.finish();*/
+					MarkList.this.finish();
 				}
 				
 			}
@@ -172,6 +180,48 @@ public class MarkList extends Activity {
 		}
 	    return true;
 	} 
+	
+	
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+	  if (v.getId()==R.id.lv_mark) {
+		String[] menuItems = getResources().getStringArray(R.array.options_list_2); 
+	    for (int i = 0; i<menuItems.length; i++) {
+	      menu.add(Menu.NONE, i, i, menuItems[i]);
+	    }
+	  }
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+	  AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+	  int menuItemIndex = item.getItemId();
+	  
+	  String[] menuItems = getResources().getStringArray(R.array.options_list_2);
+	  String menuItemName = menuItems[menuItemIndex];
+	  
+	  Mark mark = marks.get(info.position);
+	  
+	  if(menuItemName.equals(menuItems[0])){
+		  Intent intentNew = new Intent(MarkList.this, RegisterMark.class);
+			intentNew.putExtra("mark", mark);
+			MarkList.this.startActivity(intentNew);
+			MarkList.this.finish();
+		  
+	  }else if (menuItemName.equals(menuItems[1])) {
+		  	markDB.delete(mark.getIdMark());
+			adapter.clear();
+			ArrayList<Mark> marksDelete = (ArrayList<Mark>) markDB.getAll();	
+			adapter.restoreList();				
+			adapter.addAll(marksDelete);
+	        }
+	  
+	  return true;
+	}
+
+	
+	
 	
 
 }

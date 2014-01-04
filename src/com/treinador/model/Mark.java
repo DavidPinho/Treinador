@@ -1,12 +1,20 @@
 package com.treinador.model;
 
-public class Mark {
+import java.io.Serializable;
+
+public class Mark implements Serializable{
 	private int idMark;
 	private int idAthlete;
 	private String description;
 	private String initialDate;
 	private String finalDate;
+	private Boolean selected;
+	
+	public Mark(){
+		this.selected = false;
 		
+	}
+	
 	
 	public int getIdMark() {
 		return idMark;
@@ -56,6 +64,17 @@ public class Mark {
 	public void setFinalDate(String finalDate) {
 		this.finalDate = finalDate;
 	}
+	
+
+	public Boolean getSelected() {
+		return selected;
+	}
+
+
+	public void setSelected(Boolean selected) {
+		this.selected = selected;
+	}
+
 
 	@Override
 	public String toString() {
