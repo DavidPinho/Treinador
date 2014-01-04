@@ -19,7 +19,6 @@ public class ExerciseTypeDB extends Dao {
 	public long insert (ExerciseType et){
 		ContentValues c = new ContentValues();
 
-		c.put(DataBase.EXERCISE_TYPE_ID, et.getIdExerciseType());
 		c.put(DataBase.EXERCISE_TYPE_NAME, et.getDescription());
 
 		long idExerciseType = db.getDB().insert(DataBase.TB_EXERCISE_TYPE, null, c);
@@ -60,7 +59,7 @@ public class ExerciseTypeDB extends Dao {
 		
 		c.put(DataBase.EXERCISE_TYPE_NAME, et.getDescription());
 		
-		db.getDB().update(DataBase.TB_EXERCISE_TYPE, c, DataBase.EXERCISE_EXERCISE_TYPE_ID+"=?", new String[] {Integer.toString(et.getIdExerciseType())});
+		db.getDB().update(DataBase.TB_EXERCISE_TYPE, c, DataBase.EXERCISE_TYPE_ID+"=?", new String[] {Integer.toString(et.getIdExerciseType())});
 	}
 	
 	

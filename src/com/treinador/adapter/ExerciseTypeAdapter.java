@@ -26,7 +26,6 @@ public class ExerciseTypeAdapter extends ArrayAdapter<ExerciseType>{
 	    this.resourceId = resource;
 		ctx = context;
 		this.exerciseTypes= exerciseTypeList;
-		// TODO Auto-generated constructor stub
 	}
 	
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -41,20 +40,22 @@ public class ExerciseTypeAdapter extends ArrayAdapter<ExerciseType>{
 	       name.setText(type.getDescription());   
 	       
 	       return view;
-	   }
+	}
 		 
-		 
-			public int getCount() {
-				// TODO Auto-generated method stub
-				return exerciseTypes.size();
-			}
+	public int getCount() {
+		return exerciseTypes.size();
+	}
 
 			
-			public ExerciseType getExerciseType(int position) {
-				// TODO Auto-generated method stub
-				return exerciseTypes.get(position);
-			}
+	public ExerciseType getExerciseType(int position) {
+		return exerciseTypes.get(position);
+	}
 
-
+	/*
+	//TODO this method name can be different, how "updateList" or "updateArray", because this do not restore nothing
+	public void restoreList(){
+		exerciseTypes.clear();
+	}
+	*/
 
 }

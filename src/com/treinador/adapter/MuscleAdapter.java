@@ -50,17 +50,15 @@ public class MuscleAdapter  extends ArrayAdapter<Muscle>{
 	 
 	 
 		public int getCount() {
-			// TODO Auto-generated method stub
 			return muscles.size();
 		}
 
 		
 		public Muscle getMuscle(int position) {
-			// TODO Auto-generated method stub
 			return muscles.get(position);
 		}
 
-		
+	//TODO this method name can be different, how "updateList", because this do not restore nothing
 		public void restoreList(){
 			muscles.clear();
 		}

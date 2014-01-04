@@ -12,14 +12,18 @@ import com.treinador.adapter.ExerciseTypeAdapter;
 import com.treinador.adapter.MuscleAdapter;
 import com.treinador.model.ExerciseType;
 import com.treinador.model.Muscle;
+import com.treinador.model.db.ExerciseTypeDB;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -33,6 +37,7 @@ public class ExerciseTypeList extends Activity {
 	ImageButton btn_graphics;
 	ImageButton btn_lists;
 	ArrayList<ExerciseType> exerciseTypeList;
+	ExerciseTypeDB exerciseTypeDB;
 	
 	
 	@Override
@@ -40,19 +45,17 @@ public class ExerciseTypeList extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_exercise_type);
 		
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
-		ExerciseType m = new ExerciseType();
-		m.setDescription("Supino Reto");
-		ExerciseType m2 = new ExerciseType();
-		m2.setDescription("Supino Inclinado");
-		exerciseTypeList = new ArrayList<ExerciseType>();
-		exerciseTypeList.add(m);
-		exerciseTypeList.add(m2);
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Grï¿½ficos em breve!").setNeutralButton("OK", null);
+		
+		exerciseTypeDB = new ExerciseTypeDB(this);
+		exerciseTypeList = (ArrayList<ExerciseType>) exerciseTypeDB.getAll();
 		
 		adapter = new ExerciseTypeAdapter(this, R.layout.list_view_adapter_type_exercise, exerciseTypeList);
 		
 		listView = (ListView) findViewById(R.id.lv_exercise_type);
 		listView.setAdapter(adapter);
+		registerForContextMenu(listView);
+
 		
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
@@ -65,7 +68,7 @@ public class ExerciseTypeList extends Activity {
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exercício");
+		exercise.setTitle("Exercï¿½cio");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -73,7 +76,7 @@ public class ExerciseTypeList extends Activity {
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("Músculo");
+		muscle.setTitle("Mï¿½sculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
 		
@@ -171,6 +174,44 @@ public class ExerciseTypeList extends Activity {
 			ExerciseTypeList.this.finish();	
 		}
 	    return true;
-	} 
-
+	} 		
+		
+		@Override
+		public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		  if (v.getId()==R.id.lv_exercise_type) {
+			String[] menuItems = getResources().getStringArray(R.array.options_list_2); 
+		    for (int i = 0; i<menuItems.length; i++) {
+		      menu.add(Menu.NONE, i, i, menuItems[i]);
+		    }
+		  }
+		}
+		
+		@Override
+		public boolean onContextItemSelected(MenuItem item) {
+		  AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+		  int menuItemIndex = item.getItemId();
+		  
+		  String[] menuItems = getResources().getStringArray(R.array.options_list_2);
+		  String menuItemName = menuItems[menuItemIndex];
+		  
+		  ExerciseType exerciseType = exerciseTypeList.get(info.position);
+		  
+		  if(menuItemName.equals(menuItems[0])){
+			  Intent intentNew = new Intent(ExerciseTypeList.this, RegisterExerciseType.class);
+				intentNew.putExtra("exerciseType", exerciseType);
+				ExerciseTypeList.this.startActivity(intentNew);
+				ExerciseTypeList.this.finish();
+			  
+		  }else if (menuItemName.equals(menuItems[1])) {
+			  	exerciseTypeDB.delete(exerciseType.getIdExerciseType());
+				adapter.clear();
+				ArrayList<ExerciseType> exercisesDelete = (ArrayList<ExerciseType>) exerciseTypeDB.getAll();	
+				
+				//TODO it is necessary? already adapter.clear()
+				//adapter.restoreList();				
+				adapter.addAll(exercisesDelete);
+		  }
+		  
+		  return true;
+		}
 }

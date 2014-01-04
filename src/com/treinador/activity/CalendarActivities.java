@@ -32,7 +32,8 @@ public class CalendarActivities extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calendar_activities);
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		///*
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("GrÃ¡ficos em breve!").setNeutralButton("OK", null);
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
 		btn_calendar = (ImageButton) (findViewById(R.id.btn_calendar));
@@ -40,12 +41,13 @@ public class CalendarActivities extends Activity{
 		btn_lists = (ImageButton) (findViewById(R.id.btn_lists));
 		calendar = (CalendarView) (findViewById(R.id.calendar_activities));
 		
+		
 		ActionItem size = new ActionItem();
 		size.setTitle("Medida");
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exercício");
+		exercise.setTitle("ExercÃ­cio");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -53,7 +55,7 @@ public class CalendarActivities extends Activity{
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("Músculo");
+		muscle.setTitle("MÃºsculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
 		
@@ -121,7 +123,8 @@ public class CalendarActivities extends Activity{
 		});
 		
 		calendar.setOnDateChangeListener(new OnDateChangeListener() {
-			
+			//TODO modify, if the date of activities is the actual date, create other way?
+			//fro example, click a button for going to event(activity)
 			@Override
 			public void onSelectedDayChange(CalendarView view, int year, int month,
 					int dayOfMonth) {
@@ -132,7 +135,7 @@ public class CalendarActivities extends Activity{
 				
 			}
 		});
-
+//*/
 	}
 	
 
