@@ -130,12 +130,20 @@ public class ExerciseTypeList extends Activity {
 			@Override
 			public void onItemClick(QuickAction source, int pos, int actionId) {
 				if(pos==0){
+					Intent intentNew = new Intent(ExerciseTypeList.this, SizeList.class);
+					ExerciseTypeList.this.startActivity(intentNew);
+					ExerciseTypeList.this.finish();
 					
 				}else if (pos==1) {
-					/*Intent intentNew = new Intent(ExerciseTypeList.this, ExerciseTypeList.class);
+					/*
+					Intent intentNew = new Intent(ExerciseTypeList.this, ExerciseTypeList.class);
 					ExerciseTypeList.this.startActivity(intentNew);
-					ExerciseTypeList.this.finish();	*/				
+					ExerciseTypeList.this.finish();
+					*/				
 				}else if (pos==2) {
+					Intent intentNew = new Intent(ExerciseTypeList.this, MarkList.class);
+					ExerciseTypeList.this.startActivity(intentNew);
+					ExerciseTypeList.this.finish();
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(ExerciseTypeList.this, MuscleList.class);

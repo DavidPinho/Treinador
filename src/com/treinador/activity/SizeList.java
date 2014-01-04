@@ -131,15 +131,24 @@ public class SizeList extends Activity {
 			@Override
 			public void onItemClick(QuickAction source, int pos, int actionId) {
 				if(pos==0){
-					
+					/*
+					Intent intentNew = new Intent(SizeList.this, SizeList.class);
+					SizeList.this.startActivity(intentNew);
+					SizeList.this.finish();
+					*/
 				}else if (pos==1) {
 					Intent intentNew = new Intent(SizeList.this, ExerciseTypeList.class);
 					SizeList.this.startActivity(intentNew);
 					SizeList.this.finish();
 				}else if (pos==2) {
+					Intent intentNew = new Intent(SizeList.this, MarkList.class);
+					SizeList.this.startActivity(intentNew);
+					SizeList.this.finish();
 					
 				}else if (pos==3) {
-					
+					Intent intentNew = new Intent(SizeList.this, MuscleList.class);
+					SizeList.this.startActivity(intentNew);
+					SizeList.this.finish();
 				}
 				
 			}
