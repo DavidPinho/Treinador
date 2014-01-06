@@ -51,8 +51,8 @@ public class MarkList extends Activity {
 		
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
 		
-		
-		marks = (ArrayList<Mark>) markDB.getAll();
+		int athleteId = AthleteList.athleteSelected.getIdAthlete();
+		marks = (ArrayList<Mark>) markDB.getAll(athleteId);
 		
 		
 		adapter = new MarkAdapter(this, R.layout.list_view_adapter_mark, (ArrayList<Mark>) marks);
@@ -227,7 +227,8 @@ public class MarkList extends Activity {
 	  }else if (menuItemName.equals(menuItems[2])) {
 		  	markDB.delete(mark.getIdMark());
 			adapter.clear();
-			ArrayList<Mark> marksDelete = (ArrayList<Mark>) markDB.getAll();	
+			int athleteId = AthleteList.athleteSelected.getIdAthlete();
+			ArrayList<Mark> marksDelete = (ArrayList<Mark>) markDB.getAll(athleteId);	
 			adapter.restoreList();				
 			adapter.addAll(marksDelete);
 	        }

@@ -30,9 +30,9 @@ public class MarkDB extends Dao {
 
 	}
 
-	public List<Mark> getAll(){
+	public List<Mark> getAll(int athleteId){
 
-		Cursor c = db.getDB().query(DataBase.TB_MARK, null, null, null, null, null, DataBase.MARK_NAME);
+		Cursor c = db.getDB().query(DataBase.TB_MARK, null,DataBase.MARK_ATHLETE_ID+"=?", new String[] {Integer.toString(athleteId)}, null, null, DataBase.MARK_NAME);
 
 		List<Mark> marks = new ArrayList<Mark>();
 
