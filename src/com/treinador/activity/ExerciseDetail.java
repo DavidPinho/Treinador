@@ -10,6 +10,7 @@ import com.treinador.R.layout;
 import com.treinador.R.menu;
 import com.treinador.model.Athlete;
 import com.treinador.model.Exercise;
+import com.treinador.model.db.ExerciseTypeDB;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -32,12 +33,15 @@ public class ExerciseDetail extends Activity {
 	TextView lbl_weight;
 	TextView lbl_repetitions;
 	TextView lbl_duration;
+	ExerciseTypeDB typeDB;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.exercise_detail);
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		typeDB = new ExerciseTypeDB(getApplicationContext());
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
 		btn_calendar = (ImageButton) (findViewById(R.id.btn_calendar));
@@ -51,11 +55,12 @@ public class ExerciseDetail extends Activity {
 		lbl_repetitions = (TextView) (findViewById(R.id.lbl_repetitions_exercise_detail_value));
 		lbl_weight = (TextView) (findViewById(R.id.lbl_weight_exercise_detail_value));
 		
+		
 		Exercise exerciseAux = (Exercise) getIntent().getSerializableExtra("exercise");
 		
 		lbl_date.setText( new Date(exerciseAux.getDate()).toString() );
 		lbl_duration.setText(Double.toString(exerciseAux.getDuration()));
-		lbl_exercise.setText(Integer.toString(exerciseAux.getIdExercise()));
+		lbl_exercise.setText(typeDB.getOne(exerciseAux.getIdExercise()).getDescription());
 		lbl_instructions.setText(exerciseAux.getInstructions());
 		lbl_repetitions.setText(Integer.toString(exerciseAux.getRepetitions()));
 		lbl_weight.setText(Double.toString(exerciseAux.getWeight()));
