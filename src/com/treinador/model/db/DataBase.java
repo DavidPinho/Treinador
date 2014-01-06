@@ -71,10 +71,10 @@ public class DataBase {
 			"CREATE TABLE IF NOT EXISTS " + TB_EXERCISE+ "(" + EXERCISE_ID
 					+ " integer not null primary key autoincrement," + "" + EXERCISE_INSTRUCTIONS
 					+ " text not null," + "" + EXERCISE_DATE
-					+ " text not null," + "" + EXERCISE_WEIGHT
+					+ " integer not null," + "" + EXERCISE_WEIGHT
 					+ " real not null," + "" +EXERCISE_REPETITIONS
 					+ " integer not null," + "" +EXERCISE_DURATION
-					+ " float not null," + "" +EXERCISE_ATHLETE_ID
+					+ " real not null," + "" +EXERCISE_ATHLETE_ID
 					+ " integer not null," +""+ EXERCISE_EXERCISE_TYPE_ID
 					+ " integer not null, foreign key("+EXERCISE_ATHLETE_ID+") references "+TB_ATHLETE
 					+ "("+SIZE_ATHLETE_ID+"), foreign key("+EXERCISE_EXERCISE_TYPE_ID+") references "+TB_EXERCISE_TYPE

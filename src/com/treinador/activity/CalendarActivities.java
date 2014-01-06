@@ -17,22 +17,18 @@ import android.widget.ImageButton;
 
 public class CalendarActivities extends Activity{
 
-	
 	ImageButton btn_calendar;
 	ImageButton btn_athletes;
 	ImageButton btn_graphics;
 	ImageButton btn_lists;
 	CalendarView calendar;
 	
-	
-	 
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calendar_activities);
-		///*
+		
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
@@ -135,7 +131,7 @@ public class CalendarActivities extends Activity{
 				
 			}
 		});
-//*/
+
 	}
 	
 

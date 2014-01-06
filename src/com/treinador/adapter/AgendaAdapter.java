@@ -1,6 +1,7 @@
 package com.treinador.adapter;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.treinador.R;
 import com.treinador.model.Athlete;
@@ -29,7 +30,7 @@ public class AgendaAdapter extends ArrayAdapter<Exercise>{
 	    this.resourceId = resource;
 		ctx = context;
 		this.exercises= exerciseList;
-		 typeDB = new ExerciseTypeDB(context);
+		typeDB = new ExerciseTypeDB(context);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -46,9 +47,9 @@ public class AgendaAdapter extends ArrayAdapter<Exercise>{
 	       TextView name = (TextView) view.findViewById(R.id.lbl_name_exercise_agenda);
 	       TextView date = (TextView) view.findViewById(R.id.lbl_date_exercise_agenda);
 	       
-	       name.setText(exercise.getInstructions());
+	       name.setText(typeDB.getOne(exercise.getIdExerciseType()).getDescription());
 	       //typeDB.getOne(exercise.getIdExerciseType()).getDescription()
-	       date.setText(exercise.getDate());
+	       date.setText(new Date(exercise.getDate()).toString());
 	 
 	       return view;
 	   }

@@ -15,41 +15,26 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-
+            
             <TableRow
-                android:id="@+id/tableRow_row1Description_Exercise"
-                android:layout_width="match_parent"
+                android:id="@+id/tableRow_row1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="visible"
                 android:layout_marginBottom="10dp" >
-
-                <TextView
-                    android:id="@+id/lbl_description_Exercise"
-                    android:layout_width="match_parent"
+                 
+                 <Spinner
+                    android:id="@+id/spn_exercise_type"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_rect"
                     android:gravity="center"
-                    android:text="@string/description"
-                    android:textSize="20sp"
-                    android:textColor="#000000"/>
+                    android:prompt="@string/spn_exercise_type_tittle" />
+
             </TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow_row2Description__Exercise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp" >
-
-                <EditText
-                    android:id="@+id/txt_row2Description__Exercise"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:background="@drawable/selector_edit_text" 
-                    android:textSize="20sp"
-                    android:textStyle="italic">
-                </EditText>
-            </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow_row1Instructions__ExerciseRegister"
@@ -113,11 +98,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/selector_edit_text"
                     android:gravity="center"
                     android:inputType="date"
                     android:textSize="20sp"
-                    android:textStyle="italic"/>
+                    android:textStyle="italic"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:cursorVisible="false"/>
             </TableRow>
 
             <TableRow

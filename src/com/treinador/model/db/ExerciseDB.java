@@ -10,9 +10,9 @@ import android.database.Cursor;
 
 public class ExerciseDB extends Dao {
 
-	protected ExerciseDB(Context ctx) {
+	public ExerciseDB(Context ctx) {
 		super(ctx);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
@@ -43,7 +43,7 @@ public class ExerciseDB extends Dao {
 	    	
 	    	Exercise exercise = new Exercise();
 	    	
-	    	exercise.setDate(c.getString(c.getColumnIndex(DataBase.EXERCISE_DATE)));
+	    	exercise.setDate(c.getLong(c.getColumnIndex(DataBase.EXERCISE_DATE)));
 	    	exercise.setDuration(c.getFloat(c.getColumnIndex(DataBase.EXERCISE_DURATION)));
 	    	exercise.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.EXERCISE_ATHLETE_ID)));
 	    	exercise.setIdExercise(c.getInt(c.getColumnIndex(DataBase.EXERCISE_ID)));
@@ -57,6 +57,33 @@ public class ExerciseDB extends Dao {
 	    }
 	    
 	    return exercises;		
+	}
+	
+	public ArrayList<Exercise> getAllInDate(int idAthlete, long date){
+		
+		  Cursor c = db.getDB().query(DataBase.TB_EXERCISE, null, DataBase.EXERCISE_ATHLETE_ID+"=?"+" AND "+
+		  DataBase.EXERCISE_DATE+"=?", new String[] {Integer.toString(idAthlete), Long.toString(date)}, null, null, null);
+		    
+		    ArrayList<Exercise> exercises = new ArrayList<Exercise>();
+		    Exercise exercise;
+		    for(int i= 0;i<c.getCount();i++){
+		    	c.moveToPosition(i);
+		    	
+		    	exercise = new Exercise();
+		    	exercise.setDate(c.getLong(c.getColumnIndex(DataBase.EXERCISE_DATE)));
+		    	exercise.setDuration(c.getDouble(c.getColumnIndex(DataBase.EXERCISE_DURATION)));
+		    	exercise.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.EXERCISE_ATHLETE_ID)));
+		    	exercise.setIdExercise(c.getInt(c.getColumnIndex(DataBase.EXERCISE_ID)));
+		    	exercise.setIdExerciseType(c.getInt(c.getColumnIndex(DataBase.EXERCISE_EXERCISE_TYPE_ID)));
+		    	exercise.setInstructions(c.getString(c.getColumnIndex(DataBase.EXERCISE_INSTRUCTIONS)));
+		    	exercise.setRepetitions(c.getInt(c.getColumnIndex(DataBase.EXERCISE_REPETITIONS)));
+		    	exercise.setWeight(c.getFloat(c.getColumnIndex(DataBase.EXERCISE_WEIGHT)));
+		    	
+		    	exercises.add(exercise);
+		    } 	
+		   		    
+		    return exercises;	
+		
 	}
 	
 	public void delete(int id){
@@ -87,7 +114,7 @@ public class ExerciseDB extends Dao {
 		    for(int i= 0;i<c.getCount();i++){
 		    	c.moveToPosition(i);
 		    		    	
-		    	exercise.setDate(c.getString(c.getColumnIndex(DataBase.EXERCISE_DATE)));
+		    	exercise.setDate(c.getLong(c.getColumnIndex(DataBase.EXERCISE_DATE)));
 		    	exercise.setDuration(c.getFloat(c.getColumnIndex(DataBase.EXERCISE_DURATION)));
 		    	exercise.setIdAthlete(c.getInt(c.getColumnIndex(DataBase.EXERCISE_ATHLETE_ID)));
 		    	exercise.setIdExercise(c.getInt(c.getColumnIndex(DataBase.EXERCISE_ID)));
