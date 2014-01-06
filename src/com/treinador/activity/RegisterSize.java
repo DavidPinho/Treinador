@@ -24,16 +24,15 @@ import android.widget.Spinner;
 
 public class RegisterSize extends Activity {
 
-	ExpandableListView expListView;
 	
-	String[] muscles = {"Musculo 1"};
 	Spinner spn_muscle;
 	EditText txt_value;
 	EditText txt_date;
 	Button btn_register;
-	
+	boolean update =false;
 	MuscleDB muscleDB;
 	SizeDB sizeDB;
+	int id;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +50,28 @@ public class RegisterSize extends Activity {
 		spn_muscle.setAdapter(dataAdapter);
 		
 		
+		Size s = (Size) getIntent().getSerializableExtra("size");
+		update=false;
+		if(s!=null){
+			int position = 0;
+			int i = 0;
+			for (Muscle muscle : muscleDB.getAll()) {
+				if(muscle.getIdMuscle()==s.getIdMuscle()){
+					position = i;					
+					break;					
+				}
+				i++;	
+			} 
+			
+			update=true;
+			id=s.getIdSize();
+			spn_muscle.setSelection(position);
+			txt_value.setText(Double.toString(s.getSizeValue()));
+			txt_date.setText(s.getDate());
+			
+		}
+		
+		
 		btn_register.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -61,7 +82,12 @@ public class RegisterSize extends Activity {
 				s.setIdMuscle(((Muscle)spn_muscle.getSelectedItem()).getIdMuscle());
 				s.setSizeValue(Float.parseFloat(txt_value.getText().toString()));
 				
-				sizeDB.insert(s);
+				if(update){
+					s.setIdSize(id);
+					sizeDB.update(s);
+				}else{
+					sizeDB.insert(s);
+				}
 				//TODO implement update
 				
 				Intent newIntent = new Intent(RegisterSize.this, SizeList.class);

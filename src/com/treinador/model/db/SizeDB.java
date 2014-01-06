@@ -33,7 +33,7 @@ public class SizeDB extends Dao{
 
 	public List<Size> getAll(int id){
 
-		Cursor c = db.getDB().query(DataBase.TB_SIZE, null, DataBase.SIZE_ATHLETE_ID+"=?",  new String[] {Integer.toString(id)}, null, null, null);
+		Cursor c = db.getDB().query(DataBase.TB_SIZE, null, DataBase.SIZE_ATHLETE_ID+"=?",  new String[] {Integer.toString(id)}, null, null,DataBase.SIZE_MUSCLE_ID);
 
 		List<Size> sizes = new ArrayList<Size>();
 

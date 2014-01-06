@@ -6,6 +6,7 @@ import com.treinador.R;
 import com.treinador.R.layout;
 import com.treinador.R.menu;
 import com.treinador.model.Size;
+import com.treinador.model.db.MuscleDB;
 
 import android.os.Bundle;
 import android.content.Context;
@@ -23,6 +24,7 @@ public class SizeAdapter extends ArrayAdapter<Size>{
 	  private ArrayList<Size> sizes;
 	  Context ctx;
 	  int resourceId;
+	  MuscleDB muscleDB =new MuscleDB(getContext());
 
 	public SizeAdapter(Context context, int resource, ArrayList<Size> sizeList) {
 		super(context, resource, sizeList);
@@ -34,7 +36,8 @@ public class SizeAdapter extends ArrayAdapter<Size>{
 	
 	
 	 public View getView(int position, View convertView, ViewGroup parent) {
-	    	
+		 
+	  	    	
  	  View view = convertView;
        if (view == null) {
            view = inflater.inflate(R.layout.list_view_adapter_size, parent, false);
@@ -44,13 +47,16 @@ public class SizeAdapter extends ArrayAdapter<Size>{
      Size size = getSize(position);
 
     
-     TextView name = (TextView) view.findViewById(R.id.lbl_name_size);
+     TextView name = (TextView) view.findViewById(R.id.lbl_name_size);     
+     name.setText(muscleDB.getOne(size.getIdMuscle()).getDescription()); 
      
-     // Muscle muscle = new Muscle();
-     //muscle.setIdMuscle(size.getIdMuscle());
-     // name.setText(muscle.getDescription());
+     TextView value = (TextView) view.findViewById(R.id.lbl_value_size);
+     value.setText(Double.toString(size.getSizeValue()));
      
-     name.setText(size.getDate());         
+     TextView date =  (TextView) view.findViewById(R.id.lbl_date_size);
+     date.setText(size.getDate());
+     
+     
 
      return view;
  }
@@ -67,5 +73,9 @@ public class SizeAdapter extends ArrayAdapter<Size>{
 			return sizes.get(position);
 		}
 
+		public void restoreList(){
+			sizes.clear();
+			
+		}
 	
 }
