@@ -1,5 +1,7 @@
 package com.treinador.activity;
 
+import java.util.Date;
+
 import net.londatiga.android.ActionItem;
 import net.londatiga.android.QuickAction;
 
@@ -35,12 +37,13 @@ public class ExerciseDetail extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.exercise_detail);
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("GrÃ¡ficos em breve!").setNeutralButton("OK", null);
 		
 		btn_athletes = (ImageButton) (findViewById(R.id.btn_athletes));
 		btn_calendar = (ImageButton) (findViewById(R.id.btn_calendar));
 		btn_graphics = (ImageButton) (findViewById(R.id.btn_graphics));
 		btn_lists = (ImageButton) (findViewById(R.id.btn_lists));
+		
 		lbl_date = (TextView) (findViewById(R.id.lbl_date_value));
 		lbl_duration = (TextView) (findViewById(R.id.lbl_duration_exercise_detail_value));
 		lbl_exercise = (TextView) (findViewById(R.id.lbl_description_value));
@@ -50,19 +53,20 @@ public class ExerciseDetail extends Activity {
 		
 		Exercise exerciseAux = (Exercise) getIntent().getSerializableExtra("exercise");
 		
-		lbl_date.setText(exerciseAux.getDate());
-		lbl_duration.setText(Float.toString(exerciseAux.getDuration()));
+		lbl_date.setText( new Date(exerciseAux.getDate()).toString() );
+		lbl_duration.setText(Double.toString(exerciseAux.getDuration()));
 		lbl_exercise.setText(Integer.toString(exerciseAux.getIdExercise()));
 		lbl_instructions.setText(exerciseAux.getInstructions());
 		lbl_repetitions.setText(Integer.toString(exerciseAux.getRepetitions()));
-		lbl_weight.setText(Float.toString(exerciseAux.getWeight()));
+		lbl_weight.setText(Double.toString(exerciseAux.getWeight()));
+		
 		
 		ActionItem size = new ActionItem();
 		size.setTitle("Medida");
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exercício");
+		exercise.setTitle("ExercÃ­cio");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -70,10 +74,9 @@ public class ExerciseDetail extends Activity {
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("Músculo");
+		muscle.setTitle("MÃºsculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
-		
 		final QuickAction mQuickAction  = new QuickAction(this);
 		 
 		mQuickAction.addActionItem(size);

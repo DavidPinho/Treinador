@@ -12,7 +12,9 @@ import com.treinador.adapter.AgendaAdapter;
 import com.treinador.adapter.MuscleAdapter;
 import com.treinador.model.Athlete;
 import com.treinador.model.Exercise;
+import com.treinador.model.ExerciseType;
 import com.treinador.model.Muscle;
+import com.treinador.model.db.ExerciseDB;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -29,39 +31,32 @@ import android.widget.ListView;
 
 public class AgendaList extends Activity {
 	
-	ListView listView;
-	AgendaAdapter adapter;	
-	ImageButton btn_calendar;
-	ImageButton btn_athletes;
-	ImageButton btn_graphics;
-	ImageButton btn_lists;
-	ArrayList<Exercise> exercises;
+	private ListView listView;
+	private AgendaAdapter adapter;	
+	private ImageButton btn_calendar;
+	private ImageButton btn_athletes;
+	private ImageButton btn_graphics;
+	private ImageButton btn_lists;
+	private ArrayList<Exercise> exercises;
+	private ExerciseDB exerciseDB;
+	
+	private static long date;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_agenda);
 		
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+
+		exerciseDB = new ExerciseDB(getApplicationContext());
 		
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gr�ficos em breve!").setNeutralButton("OK", null);
-		Exercise m = new Exercise();
-		m.setInstructions("Supino Reto");
-		m.setDate("10/12/2013");
-		m.setDuration(30);
-		m.setRepetitions(10);
-		m.setWeight(40);
-		m.setIdExercise(1);
-		Exercise m2 = new Exercise();
-		m2.setInstructions("Rosca Direta");
-		m2.setDate("10/12/2013");
-		m2.setDuration(60);
-		m2.setRepetitions(12);
-		m2.setWeight(35);
-		m2.setIdExercise(2);
-		exercises = new ArrayList<Exercise>();
-		exercises.add(m);
-		exercises.add(m2);
+        Long dateSelected = getIntent().getLongExtra("dataLongMiliseconds", 0);
+        if(dateSelected != 0){
+        	AgendaList.setDate(dateSelected);
+        }
 		
+		exercises = exerciseDB.getAllInDate(AthleteList.athleteSelected.getIdAthlete(), date);
 		adapter = new AgendaAdapter(this, R.layout.list_view_adapter_agenda, exercises);
 		
 		listView = (ListView) findViewById(R.id.lv_agenda);
@@ -79,7 +74,7 @@ public class AgendaList extends Activity {
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exerc�cio");
+		exercise.setTitle("Exercício");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -87,10 +82,9 @@ public class AgendaList extends Activity {
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("M�sculo");
+		muscle.setTitle("Músculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
-		
 		final QuickAction mQuickAction  = new QuickAction(this);
 		 
 		mQuickAction.addActionItem(size);
@@ -119,7 +113,6 @@ public class AgendaList extends Activity {
 			}
 		});
 		
-		
 		btn_graphics.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -128,7 +121,6 @@ public class AgendaList extends Activity {
 				
 			}
 		});
-		
 		
 		btn_lists.setOnClickListener(new View.OnClickListener() {
 			
@@ -218,11 +210,26 @@ public class AgendaList extends Activity {
 		  AgendaList.this.finish();
 		  
 	  }else if (menuItemName.equals(menuItems[1])) {
-		  		
-	        }else if (menuItemName.equals(menuItems[2])) {
-				
-			}
+		  Intent intentNew = new Intent(AgendaList.this, RegisterExercise.class);
+		  intentNew.putExtra("exercise", exercise);
+		  AgendaList.this.startActivity(intentNew);
+		  AgendaList.this.finish();
+	  }else if (menuItemName.equals(menuItems[2])) {
+		  exerciseDB.delete(exercise.getIdExercise());
+		  adapter.clear();
+		  ArrayList<Exercise> exercisesDelete = exerciseDB.getAll();	
+			
+		  adapter.addAll(exercisesDelete);
+	  }
 	  
 	  return true;
+	}
+	
+	public static void setDate(long date){
+		AgendaList.date = date;
+	}
+	
+	public static long getDate(){
+		return date;
 	}
 }

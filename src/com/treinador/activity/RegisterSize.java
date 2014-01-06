@@ -46,7 +46,7 @@ public class RegisterSize extends Activity {
 		txt_date = (EditText) findViewById(R.id.txt_date);
 		btn_register = (Button) findViewById(R.id.btn_register_size);
 			
-		List<Muscle> labels = muscleDB.getAll();		
+		List<Muscle> labels = muscleDB.getAll();
 		ArrayAdapter<Muscle> dataAdapter = new ArrayAdapter<Muscle>(this,android.R.layout.simple_list_item_1, labels);		
 		spn_muscle.setAdapter(dataAdapter);
 		
@@ -62,7 +62,7 @@ public class RegisterSize extends Activity {
 				s.setSizeValue(Float.parseFloat(txt_value.getText().toString()));
 				
 				sizeDB.insert(s);
-				//implement update
+				//TODO implement update
 				
 				Intent newIntent = new Intent(RegisterSize.this, SizeList.class);
 				RegisterSize.this.startActivity(newIntent);

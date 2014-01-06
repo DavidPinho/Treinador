@@ -52,7 +52,7 @@ public class RegisterExerciseType extends Activity {
 					exerciseTypeDB.update(exerciseType);
 				}
 				else
-					exerciseTypeDB.insert(exerciseType);//TODO verify insert and update in the list
+					exerciseTypeDB.insert(exerciseType);
 							
 				Intent intent = new Intent(RegisterExerciseType.this, ExerciseTypeList.class);
 				RegisterExerciseType.this.startActivity(intent);

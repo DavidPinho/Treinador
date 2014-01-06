@@ -9,10 +9,10 @@ public class Exercise implements Serializable {
 	private int idAthlete;
 	private int idExerciseType;
 	private String instructions;
-	private String date;
-	private float weight;
+	private long date;
+	private double weight;
 	private int repetitions;
-	private float duration;
+	private double duration;
 	
 	public int getIdExercise() {
 		return idExercise;
@@ -38,16 +38,16 @@ public class Exercise implements Serializable {
 	public void setInstructions(String instructions) {
 		this.instructions = instructions;
 	}
-	public String getDate() {
+	public long getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(long date) {
 		this.date = date;
 	}
-	public float getWeight() {
+	public double getWeight() {
 		return weight;
 	}
-	public void setWeight(float weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 	public int getRepetitions() {
@@ -56,15 +56,13 @@ public class Exercise implements Serializable {
 	public void setRepetitions(int repetitions) {
 		this.repetitions = repetitions;
 	}
-	public float getDuration() {
+	public double getDuration() {
 		return duration;
 	}
-	public void setDuration(float duration) {
+	public void setDuration(double duration) {
 		this.duration = duration;
 	}
 		
-	
-	
-	
+
 
 }
