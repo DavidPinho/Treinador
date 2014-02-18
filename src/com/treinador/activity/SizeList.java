@@ -44,7 +44,7 @@ public class SizeList extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_size);
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Grï¿½ficos em breve!").setNeutralButton("OK", null);
 		sizeDB = new SizeDB(getApplicationContext());
 		
 		sizes = (ArrayList<Size>) sizeDB.getAll(AthleteList.athleteSelected.getIdAthlete());
@@ -69,7 +69,7 @@ public class SizeList extends Activity {
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exercício");
+		exercise.setTitle("Exercï¿½cio");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -77,7 +77,7 @@ public class SizeList extends Activity {
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("Músculo");
+		muscle.setTitle("Mï¿½sculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
 		
@@ -95,7 +95,7 @@ public class SizeList extends Activity {
 			public void onClick(View arg0) {
 				Intent intentNew = new Intent(SizeList.this, CalendarActivities.class);
 				SizeList.this.startActivity(intentNew);
-				SizeList.this.finish();	
+				//SizeList.this.finish();	
 				
 			}
 		});
@@ -106,7 +106,7 @@ public class SizeList extends Activity {
 			public void onClick(View v) {
 				Intent intentNew = new Intent(SizeList.this, AthleteList.class);
 				SizeList.this.startActivity(intentNew);
-				SizeList.this.finish();				
+				//SizeList.this.finish();				
 			}
 		});
 		
@@ -137,22 +137,22 @@ public class SizeList extends Activity {
 					/*
 					Intent intentNew = new Intent(SizeList.this, SizeList.class);
 					SizeList.this.startActivity(intentNew);
-					SizeList.this.finish();
+					//SizeList.this.finish();
 					*/
 				}else if (pos==1) {
 					Intent intentNew = new Intent(SizeList.this, ExerciseTypeList.class);
 					SizeList.this.startActivity(intentNew);
-					SizeList.this.finish();
+					//SizeList.this.finish();
 				}else if (pos==2) {
 					Intent intentNew = new Intent(SizeList.this, MarkList.class);
 					SizeList.this.startActivity(intentNew);
-					SizeList.this.finish();	
+					//SizeList.this.finish();	
 
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(SizeList.this, MuscleList.class);
 					SizeList.this.startActivity(intentNew);
-					SizeList.this.finish();
+					//SizeList.this.finish();
 				}
 				
 			}
@@ -161,7 +161,7 @@ public class SizeList extends Activity {
 		
 	}
 	
-	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -178,7 +178,7 @@ public class SizeList extends Activity {
 		if(item.getItemId()== R.id.action_create){
 			Intent intentNew = new Intent(SizeList.this, RegisterSize.class);
 			SizeList.this.startActivity(intentNew);
-			SizeList.this.finish();	
+			//SizeList.this.finish();	
 		}
 	    return true;
 	} 
@@ -207,7 +207,7 @@ public class SizeList extends Activity {
 		  Intent intentNew = new Intent(SizeList.this, RegisterSize.class);
 			intentNew.putExtra("size", size);
 			SizeList.this.startActivity(intentNew);
-			SizeList.this.finish();
+			//SizeList.this.finish();
 		  
 	  }else if (menuItemName.equals(menuItems[1])) {
 		  	sizeDB.delete(size.getIdSize());
@@ -248,6 +248,6 @@ public class SizeList extends Activity {
 		
 		return sizes2;		
 	}
-	
+		
 
 }

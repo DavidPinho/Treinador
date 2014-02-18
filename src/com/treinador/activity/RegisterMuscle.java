@@ -62,6 +62,7 @@ public class RegisterMuscle extends Activity {
 		});
 
 	}
+	
 
 
 
@@ -71,5 +72,6 @@ public class RegisterMuscle extends Activity {
 		getMenuInflater().inflate(R.menu.registers_muscle, menu);
 		return true;
 	}
+	
 
 }

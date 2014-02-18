@@ -22,13 +22,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
 public class RegisterExercise extends Activity{
 	
 	private EditText instructions;
-	private EditText date;
 	private EditText weight;
 	private EditText repetitionsNumber;
 	private EditText duration;
@@ -44,9 +44,12 @@ public class RegisterExercise extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_exercise);
+		
+		ScrollView sv = (ScrollView)findViewById(R.id.sv_register_exercise); 
+		sv.setVerticalScrollBarEnabled(false); 
+		sv.setHorizontalScrollBarEnabled(false);
 
 		instructions  = (EditText) findViewById(R.id.txt_row2Instructions__ExerciseRegister);
-		date = (EditText) findViewById(R.id.txt_row2Date__ExerciseRegister);
 		weight = (EditText) findViewById(R.id.txt_row2Weight__ExerciseRegister);
 		repetitionsNumber = (EditText) findViewById(R.id.txt_row2Repetitions__ExerciseRegister);
 		duration = (EditText) findViewById(R.id.txt_row2Duration__ExerciseRegister);
@@ -58,7 +61,6 @@ public class RegisterExercise extends Activity{
 		spn_exercise_type.setAdapter(dataAdapter);
 		
 		final Exercise exercise = (Exercise) getIntent().getSerializableExtra("exercise");
-		date.setText(new Date(AgendaList.getDate()).toString());
 
 		update=false;
 		if(exercise!=null){
@@ -145,13 +147,14 @@ public class RegisterExercise extends Activity{
 							
 				Intent intent = new Intent(RegisterExercise.this, AgendaList.class);				
 				RegisterExercise.this.startActivity(intent);
-				RegisterExercise.this.finish();
+				//RegisterExercise.this.finish();
 			
 			}
 		});
 		
 
 	}
+
 
 	
 	@Override

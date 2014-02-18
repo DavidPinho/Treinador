@@ -95,7 +95,7 @@ public class ExerciseDetail extends Activity {
 			public void onClick(View arg0) {
 				Intent intentNew = new Intent(ExerciseDetail.this, CalendarActivities.class);
 				ExerciseDetail.this.startActivity(intentNew);
-				ExerciseDetail.this.finish();	
+				//ExerciseDetail.this.finish();	
 				
 			}
 		});
@@ -106,7 +106,7 @@ public class ExerciseDetail extends Activity {
 			public void onClick(View v) {
 				Intent intentNew = new Intent(ExerciseDetail.this, AthleteList.class);
 				ExerciseDetail.this.startActivity(intentNew);
-				ExerciseDetail.this.finish();				
+				//ExerciseDetail.this.finish();				
 			}
 		});
 		
@@ -138,18 +138,20 @@ public class ExerciseDetail extends Activity {
 				}else if (pos==1) {
 					Intent intentNew = new Intent(ExerciseDetail.this, ExerciseTypeList.class);
 					ExerciseDetail.this.startActivity(intentNew);
-					ExerciseDetail.this.finish();
+					//ExerciseDetail.this.finish();
 				}else if (pos==2) {
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(ExerciseDetail.this, MuscleList.class);
 					ExerciseDetail.this.startActivity(intentNew);
-					ExerciseDetail.this.finish();
+					//ExerciseDetail.this.finish();
 				}
 				
 			}
 		});
 	}
+	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

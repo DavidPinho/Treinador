@@ -8,24 +8,109 @@
 package com.treinador;
 
 public final class R {
+    public static final class anim {
+        public static final int grow_from_bottom=0x7f040000;
+        public static final int grow_from_bottomleft_to_topright=0x7f040001;
+        public static final int grow_from_bottomright_to_topleft=0x7f040002;
+        public static final int grow_from_top=0x7f040003;
+        public static final int grow_from_topleft_to_bottomright=0x7f040004;
+        public static final int grow_from_topright_to_bottomleft=0x7f040005;
+        public static final int rail=0x7f040006;
+        public static final int shrink_from_bottom=0x7f040007;
+        public static final int shrink_from_bottomleft_to_topright=0x7f040008;
+        public static final int shrink_from_bottomright_to_topleft=0x7f040009;
+        public static final int shrink_from_top=0x7f04000a;
+        public static final int shrink_from_topleft_to_bottomright=0x7f04000b;
+        public static final int shrink_from_topright_to_bottomleft=0x7f04000c;
+    }
     public static final class array {
-        public static final int gender=0x7f070000;
+        public static final int gender=0x7f090000;
+        public static final int options_list=0x7f090001;
+        public static final int options_list_2=0x7f090002;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_current_month=0x7f010001;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_highlighted=0x7f010006;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_range_first=0x7f010003;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_range_last=0x7f010005;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_range_middle=0x7f010004;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_selectable=0x7f010000;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_today=0x7f010002;
     }
     public static final class color {
-        public static final int backgorung=0x7f040005;
-        public static final int black=0x7f040001;
-        public static final int font_color=0x7f040004;
-        public static final int label_selected=0x7f040008;
-        public static final int light_blue=0x7f040002;
-        public static final int light_gray=0x7f04000b;
-        public static final int link_color=0x7f040003;
-        public static final int link_datails=0x7f040009;
-        public static final int rect_stroke=0x7f040007;
-        public static final int round_stroke=0x7f040006;
-        public static final int royal_blue=0x7f04000a;
-        public static final int white=0x7f040000;
+        public static final int backgorung=0x7f050010;
+        public static final int black=0x7f05000c;
+        public static final int calendar_active_month_bg=0x7f050000;
+        public static final int calendar_bg=0x7f050001;
+        public static final int calendar_divider=0x7f050002;
+        public static final int calendar_highlighted_day_bg=0x7f050005;
+        public static final int calendar_inactive_month_bg=0x7f050003;
+        public static final int calendar_selected_day_bg=0x7f050004;
+        public static final int calendar_selected_range_bg=0x7f050006;
+        public static final int calendar_text_active=0x7f050008;
+        public static final int calendar_text_inactive=0x7f050007;
+        public static final int calendar_text_selected=0x7f050009;
+        public static final int calendar_text_selector=0x7f050017;
+        public static final int calendar_text_unselectable=0x7f05000a;
+        public static final int font_color=0x7f05000f;
+        public static final int label_selected=0x7f050013;
+        public static final int light_blue=0x7f05000d;
+        public static final int light_gray=0x7f050016;
+        public static final int link_color=0x7f05000e;
+        public static final int link_datails=0x7f050014;
+        public static final int rect_stroke=0x7f050012;
+        public static final int round_stroke=0x7f050011;
+        public static final int royal_blue=0x7f050015;
+        public static final int white=0x7f05000b;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -34,149 +119,299 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060005;
+        public static final int activity_vertical_margin=0x7f060006;
+        public static final int calendar_day_headers_paddingbottom=0x7f060000;
+        public static final int calendar_month_title_bottommargin=0x7f060002;
+        public static final int calendar_month_topmargin=0x7f060001;
+        public static final int calendar_text_medium=0x7f060003;
+        public static final int calendar_text_small=0x7f060004;
     }
     public static final class drawable {
         public static final int background_screens=0x7f020000;
         public static final int border_left=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int introducao=0x7f020003;
-        public static final int my_button=0x7f020004;
-        public static final int my_button_focus=0x7f020005;
-        public static final int rounded_rect=0x7f020006;
-        public static final int rounded_rect_focus=0x7f020007;
-        public static final int selector_button=0x7f020008;
-        public static final int selector_edit_text=0x7f020009;
+        public static final int calendar_bg_selector=0x7f020002;
+        public static final int go_icon=0x7f020003;
+        public static final int ic_accept=0x7f020004;
+        public static final int ic_action_event=0x7f020005;
+        public static final int ic_action_group=0x7f020006;
+        public static final int ic_action_network_cell=0x7f020007;
+        public static final int ic_action_new=0x7f020008;
+        public static final int ic_action_view_as_grid=0x7f020009;
+        public static final int ic_add=0x7f02000a;
+        public static final int ic_exercise=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int ic_list_more=0x7f02000d;
+        public static final int ic_list_more_selected=0x7f02000e;
+        public static final int ic_mark=0x7f02000f;
+        public static final int ic_muscle=0x7f020010;
+        public static final int ic_size=0x7f020011;
+        public static final int ic_up=0x7f020012;
+        public static final int icon=0x7f020013;
+        public static final int introducao=0x7f020014;
+        public static final int my_button=0x7f020015;
+        public static final int my_button_below_bar=0x7f020016;
+        public static final int my_button_focus=0x7f020017;
+        public static final int my_button_focus_rect=0x7f020018;
+        public static final int my_button_rect=0x7f020019;
+        public static final int my_image_button=0x7f02001a;
+        public static final int my_image_button_focus=0x7f02001b;
+        public static final int my_screens=0x7f02001c;
+        public static final int ok=0x7f02001d;
+        public static final int quickaction_arrow_down=0x7f02001e;
+        public static final int quickaction_arrow_up=0x7f02001f;
+        public static final int quickaction_bottom_frame=0x7f020020;
+        public static final int quickaction_slider_background=0x7f020021;
+        public static final int quickaction_slider_btn=0x7f020022;
+        public static final int quickaction_slider_btn_normal=0x7f020023;
+        public static final int quickaction_slider_btn_on=0x7f020024;
+        public static final int quickaction_slider_btn_pressed=0x7f020025;
+        public static final int quickaction_slider_btn_selected=0x7f020026;
+        public static final int quickaction_slider_grip_left=0x7f020027;
+        public static final int quickaction_slider_grip_right=0x7f020028;
+        public static final int quickaction_top_frame=0x7f020029;
+        public static final int quickcontact_drop_shadow=0x7f02002a;
+        public static final int rounded_rect=0x7f02002b;
+        public static final int rounded_rect_focus=0x7f02002c;
+        public static final int selector_button=0x7f02002d;
+        public static final int selector_button_rect=0x7f02002e;
+        public static final int selector_edit_text=0x7f02002f;
+        public static final int selector_image_button=0x7f020030;
+        public static final int textfield_default=0x7f020031;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0a0000;
-        public static final int TableLayout1=0x7f0a000f;
-        public static final int action_settings=0x7f0a0054;
-        public static final int btn_Register__ExerciseRegister=0x7f0a0038;
-        public static final int btn_buttonRegister_MarkRegister=0x7f0a0045;
-        public static final int btn_cadastra=0x7f0a003a;
-        public static final int btn_edit_athlete=0x7f0a000b;
-        public static final int btn_new_athlete=0x7f0a000c;
-        public static final int btn_register=0x7f0a001d;
-        public static final int btn_remove_athlete=0x7f0a000a;
-        public static final int button1=0x7f0a0003;
-        public static final int button2=0x7f0a0004;
-        public static final int button3=0x7f0a0005;
-        public static final int button4=0x7f0a0006;
-        public static final int calendar_activities=0x7f0a0001;
-        public static final int cb_atleta_lista=0x7f0a0008;
-        public static final int expListView=0x7f0a004c;
-        public static final int imageView1=0x7f0a000e;
-        public static final int lbl_birthDate=0x7f0a0015;
-        public static final int lbl_date=0x7f0a0051;
-        public static final int lbl_descricao=0x7f0a0039;
-        public static final int lbl_description=0x7f0a0047;
-        public static final int lbl_description_Exercise=0x7f0a0020;
-        public static final int lbl_description_MarkRegister=0x7f0a003d;
-        public static final int lbl_gender=0x7f0a0019;
-        public static final int lbl_name=0x7f0a0011;
-        public static final int lbl_nome_atleta_lista=0x7f0a0007;
-        public static final int lbl_row1Date_MarkRegister=0x7f0a0041;
-        public static final int lbl_row1Date__ExerciseRegister=0x7f0a0028;
-        public static final int lbl_row1Duration__ExerciseRegister=0x7f0a0034;
-        public static final int lbl_row1Instructions__ExerciseRegister=0x7f0a0024;
-        public static final int lbl_row1Repetitions__ExerciseRegister=0x7f0a0030;
-        public static final int lbl_row1Weight__ExerciseRegister=0x7f0a002c;
-        public static final int lbl_value=0x7f0a004d;
-        public static final int linearLayout_buttonsCalendar=0x7f0a0002;
-        public static final int lv_athlete=0x7f0a000d;
-        public static final int spn_gender=0x7f0a001b;
-        public static final int tableLayout_btn=0x7f0a001e;
-        public static final int tableRow_buttonRegister=0x7f0a004a;
-        public static final int tableRow_buttonRegister_MarkRegister=0x7f0a0044;
-        public static final int tableRow_buttonRegister__ExerciseRegister=0x7f0a0037;
-        public static final int tableRow_register=0x7f0a001c;
-        public static final int tableRow_row1BirthDate=0x7f0a0014;
-        public static final int tableRow_row1Date=0x7f0a0050;
-        public static final int tableRow_row1Date_MarkRegister=0x7f0a0040;
-        public static final int tableRow_row1Date__ExerciseRegister=0x7f0a0027;
-        public static final int tableRow_row1Description=0x7f0a0046;
-        public static final int tableRow_row1Description_Exercise=0x7f0a001f;
-        public static final int tableRow_row1Description_MarkRegister=0x7f0a003c;
-        public static final int tableRow_row1Duration__ExerciseRegister=0x7f0a0033;
-        public static final int tableRow_row1Gender=0x7f0a0018;
-        public static final int tableRow_row1Instructions__ExerciseRegister=0x7f0a0023;
-        public static final int tableRow_row1Name=0x7f0a0010;
-        public static final int tableRow_row1Repetitions__ExerciseRegister=0x7f0a002f;
-        public static final int tableRow_row1Value=0x7f0a004b;
-        public static final int tableRow_row1Weight__ExerciseRegister=0x7f0a002b;
-        public static final int tableRow_row2BirthDate=0x7f0a0016;
-        public static final int tableRow_row2Date=0x7f0a0052;
-        public static final int tableRow_row2Date_MarkRegister=0x7f0a0042;
-        public static final int tableRow_row2Date__ExerciseRegister=0x7f0a0029;
-        public static final int tableRow_row2Description=0x7f0a0048;
-        public static final int tableRow_row2Description_MarkRegister=0x7f0a003e;
-        public static final int tableRow_row2Description__Exercise=0x7f0a0021;
-        public static final int tableRow_row2Duration__ExerciseRegister=0x7f0a0035;
-        public static final int tableRow_row2Gender=0x7f0a001a;
-        public static final int tableRow_row2Instructions__ExerciseRegister=0x7f0a0025;
-        public static final int tableRow_row2Name=0x7f0a0012;
-        public static final int tableRow_row2Repetitions__ExerciseRegister=0x7f0a0031;
-        public static final int tableRow_row2Value=0x7f0a004e;
-        public static final int tableRow_row2Weight__ExerciseRegister=0x7f0a002d;
-        public static final int topBar=0x7f0a0009;
-        public static final int txt_birthDate=0x7f0a0017;
-        public static final int txt_date=0x7f0a0053;
-        public static final int txt_descricao=0x7f0a003b;
-        public static final int txt_description=0x7f0a0049;
-        public static final int txt_name=0x7f0a0013;
-        public static final int txt_row2Date_MarkRegister=0x7f0a0043;
-        public static final int txt_row2Date__ExerciseRegister=0x7f0a002a;
-        public static final int txt_row2Description_MarkRegister=0x7f0a003f;
-        public static final int txt_row2Description__Exercise=0x7f0a0022;
-        public static final int txt_row2Duration__ExerciseRegister=0x7f0a0036;
-        public static final int txt_row2Instructions__ExerciseRegister=0x7f0a0026;
-        public static final int txt_row2Repetitions__ExerciseRegister=0x7f0a0032;
-        public static final int txt_row2Weight__ExerciseRegister=0x7f0a002e;
-        public static final int txt_value=0x7f0a004f;
+        public static final int TableLayout1=0x7f0b0038;
+        public static final int action_create=0x7f0b0075;
+        public static final int action_settings=0x7f0b0076;
+        public static final int arrow_down=0x7f0b0037;
+        public static final int arrow_up=0x7f0b0033;
+        public static final int bottomBar=0x7f0b0003;
+        public static final int btn1=0x7f0b0008;
+        public static final int btn2=0x7f0b0009;
+        public static final int btn_Register__ExerciseRegister=0x7f0b005c;
+        public static final int btn_athletes=0x7f0b0005;
+        public static final int btn_buttonRegister_MarkRegister=0x7f0b0069;
+        public static final int btn_calendar=0x7f0b0004;
+        public static final int btn_graphics=0x7f0b0006;
+        public static final int btn_lists=0x7f0b0007;
+        public static final int btn_register=0x7f0b0046;
+        public static final int btn_register_size=0x7f0b0074;
+        public static final int calendar_grid=0x7f0b0031;
+        public static final int calendar_view=0x7f0b0002;
+        public static final int footer=0x7f0b0036;
+        public static final int header2=0x7f0b0032;
+        public static final int i_more=0x7f0b001d;
+        public static final int iv_icon=0x7f0b0000;
+        public static final int l_list=0x7f0b000a;
+        public static final int lbl_birthDate=0x7f0b003e;
+        public static final int lbl_date=0x7f0b0072;
+        public static final int lbl_date_exercise_agenda=0x7f0b0020;
+        public static final int lbl_date_exercise_detail=0x7f0b0012;
+        public static final int lbl_date_size=0x7f0b0026;
+        public static final int lbl_date_value=0x7f0b0013;
+        public static final int lbl_description=0x7f0b000c;
+        public static final int lbl_description_MarkRegister=0x7f0b0062;
+        public static final int lbl_description_execise_type=0x7f0b005d;
+        public static final int lbl_description_value=0x7f0b000d;
+        public static final int lbl_duration_exercise_detail=0x7f0b001b;
+        public static final int lbl_duration_exercise_detail_value=0x7f0b001c;
+        public static final int lbl_gender=0x7f0b0042;
+        public static final int lbl_instructions=0x7f0b000f;
+        public static final int lbl_instructions_value=0x7f0b0010;
+        public static final int lbl_name=0x7f0b003a;
+        public static final int lbl_name_exercise_agenda=0x7f0b001f;
+        public static final int lbl_name_mark=0x7f0b0022;
+        public static final int lbl_name_muscle=0x7f0b0023;
+        public static final int lbl_name_size=0x7f0b0025;
+        public static final int lbl_name_type_exercise=0x7f0b0029;
+        public static final int lbl_nome_atleta_lista=0x7f0b0021;
+        public static final int lbl_repetitions_exercise_detail=0x7f0b0018;
+        public static final int lbl_repetitions_exercise_detail_value=0x7f0b0019;
+        public static final int lbl_row1Date_MarkRegister=0x7f0b0065;
+        public static final int lbl_row1Duration__ExerciseRegister=0x7f0b0058;
+        public static final int lbl_row1Instructions__ExerciseRegister=0x7f0b004c;
+        public static final int lbl_row1Repetitions__ExerciseRegister=0x7f0b0054;
+        public static final int lbl_row1Weight__ExerciseRegister=0x7f0b0050;
+        public static final int lbl_value=0x7f0b006e;
+        public static final int lbl_value_size=0x7f0b0028;
+        public static final int lbl_weight_exercise_detail=0x7f0b0015;
+        public static final int lbl_weight_exercise_detail_value=0x7f0b0016;
+        public static final int lv_agenda=0x7f0b002a;
+        public static final int lv_athlete=0x7f0b002b;
+        public static final int lv_exercise_type=0x7f0b002c;
+        public static final int lv_mark=0x7f0b002d;
+        public static final int lv_muscle=0x7f0b002e;
+        public static final int lv_size=0x7f0b002f;
+        public static final int scroll=0x7f0b0034;
+        public static final int spn_exercise_type=0x7f0b004a;
+        public static final int spn_gender=0x7f0b0044;
+        public static final int spn_muscle=0x7f0b006c;
+        public static final int sv_register_exercise=0x7f0b0048;
+        public static final int t_name=0x7f0b001e;
+        public static final int tableLayout_btn=0x7f0b0047;
+        public static final int tableRow_buttonRegister=0x7f0b0060;
+        public static final int tableRow_buttonRegister_MarkRegister=0x7f0b0068;
+        public static final int tableRow_buttonRegister__ExerciseRegister=0x7f0b005b;
+        public static final int tableRow_register=0x7f0b0045;
+        public static final int tableRow_row1=0x7f0b0049;
+        public static final int tableRow_row10Value=0x7f0b006d;
+        public static final int tableRow_row1BirthDate=0x7f0b003d;
+        public static final int tableRow_row1Date=0x7f0b0071;
+        public static final int tableRow_row1Date_MarkRegister=0x7f0b0064;
+        public static final int tableRow_row1Description=0x7f0b000b;
+        public static final int tableRow_row1Description_MarkRegister=0x7f0b0061;
+        public static final int tableRow_row1Description_SizeList=0x7f0b0024;
+        public static final int tableRow_row1Duration__ExerciseRegister=0x7f0b0057;
+        public static final int tableRow_row1Gender=0x7f0b0041;
+        public static final int tableRow_row1Instructions__ExerciseRegister=0x7f0b004b;
+        public static final int tableRow_row1Name=0x7f0b0039;
+        public static final int tableRow_row1Repetitions__ExerciseRegister=0x7f0b0053;
+        public static final int tableRow_row1Value=0x7f0b006b;
+        public static final int tableRow_row1Weight__ExerciseRegister=0x7f0b004f;
+        public static final int tableRow_row2BirthDate=0x7f0b003f;
+        public static final int tableRow_row2Date=0x7f0b0011;
+        public static final int tableRow_row2Date_MarkRegister=0x7f0b0066;
+        public static final int tableRow_row2Description=0x7f0b005e;
+        public static final int tableRow_row2Description_MarkRegister=0x7f0b0027;
+        public static final int tableRow_row2Duration=0x7f0b001a;
+        public static final int tableRow_row2Duration__ExerciseRegister=0x7f0b0059;
+        public static final int tableRow_row2Gender=0x7f0b0043;
+        public static final int tableRow_row2Instructions=0x7f0b000e;
+        public static final int tableRow_row2Instructions__ExerciseRegister=0x7f0b004d;
+        public static final int tableRow_row2Name=0x7f0b003b;
+        public static final int tableRow_row2Repetitions=0x7f0b0017;
+        public static final int tableRow_row2Repetitions__ExerciseRegister=0x7f0b0055;
+        public static final int tableRow_row2Value=0x7f0b006f;
+        public static final int tableRow_row2Weight=0x7f0b0014;
+        public static final int tableRow_row2Weight__ExerciseRegister=0x7f0b0051;
+        public static final int title=0x7f0b0030;
+        public static final int tracks=0x7f0b0035;
+        public static final int tv_title=0x7f0b0001;
+        public static final int txt_birthDate=0x7f0b0040;
+        public static final int txt_date=0x7f0b0073;
+        public static final int txt_description=0x7f0b006a;
+        public static final int txt_description_exercise_type=0x7f0b005f;
+        public static final int txt_name=0x7f0b003c;
+        public static final int txt_row2Date_MarkRegister=0x7f0b0067;
+        public static final int txt_row2Description_MarkRegister=0x7f0b0063;
+        public static final int txt_row2Duration__ExerciseRegister=0x7f0b005a;
+        public static final int txt_row2Instructions__ExerciseRegister=0x7f0b004e;
+        public static final int txt_row2Repetitions__ExerciseRegister=0x7f0b0056;
+        public static final int txt_row2Weight__ExerciseRegister=0x7f0b0052;
+        public static final int txt_value=0x7f0b0070;
     }
     public static final class layout {
-        public static final int calendar_activities=0x7f030000;
-        public static final int list_view_adapter_athlete=0x7f030001;
-        public static final int list_view_athlete=0x7f030002;
-        public static final int main_introduction=0x7f030003;
-        public static final int register_athlete=0x7f030004;
-        public static final int register_exercise=0x7f030005;
-        public static final int register_exercise_type=0x7f030006;
-        public static final int register_mark=0x7f030007;
-        public static final int register_muscle=0x7f030008;
-        public static final int register_size=0x7f030009;
+        public static final int action_item=0x7f030000;
+        public static final int calendar_activities=0x7f030001;
+        public static final int example1=0x7f030002;
+        public static final int example2=0x7f030003;
+        public static final int exercise_detail=0x7f030004;
+        public static final int list=0x7f030005;
+        public static final int list_view_adapter_agenda=0x7f030006;
+        public static final int list_view_adapter_athlete=0x7f030007;
+        public static final int list_view_adapter_mark=0x7f030008;
+        public static final int list_view_adapter_muscle=0x7f030009;
+        public static final int list_view_adapter_size=0x7f03000a;
+        public static final int list_view_adapter_type_exercise=0x7f03000b;
+        public static final int list_view_agenda=0x7f03000c;
+        public static final int list_view_athlete=0x7f03000d;
+        public static final int list_view_exercise_type=0x7f03000e;
+        public static final int list_view_mark=0x7f03000f;
+        public static final int list_view_muscle=0x7f030010;
+        public static final int list_view_size=0x7f030011;
+        public static final int main=0x7f030012;
+        public static final int month=0x7f030013;
+        public static final int quickaction=0x7f030014;
+        public static final int register_athlete=0x7f030015;
+        public static final int register_exercise=0x7f030016;
+        public static final int register_exercise_type=0x7f030017;
+        public static final int register_mark=0x7f030018;
+        public static final int register_muscle=0x7f030019;
+        public static final int register_size=0x7f03001a;
+        public static final int week=0x7f03001b;
     }
     public static final class menu {
-        public static final int cadastra_atleta=0x7f090000;
-        public static final int introducao=0x7f090001;
-        public static final int main=0x7f090002;
-        public static final int registers_muscle=0x7f090003;
-        public static final int registers_size=0x7f090004;
-        public static final int tipo_exercicio=0x7f090005;
+        public static final int actionbar_menu=0x7f0a0000;
+        public static final int agenda_list=0x7f0a0001;
+        public static final int cadastra_atleta=0x7f0a0002;
+        public static final int exercise_detail=0x7f0a0003;
+        public static final int exercise_type_list=0x7f0a0004;
+        public static final int introducao=0x7f0a0005;
+        public static final int main=0x7f0a0006;
+        public static final int mark_adapter=0x7f0a0007;
+        public static final int mark_list=0x7f0a0008;
+        public static final int menu=0x7f0a0009;
+        public static final int muscle_list=0x7f0a000a;
+        public static final int registers_exercise=0x7f0a000b;
+        public static final int registers_mark=0x7f0a000c;
+        public static final int registers_muscle=0x7f0a000d;
+        public static final int registers_size=0x7f0a000e;
+        public static final int size_adapter=0x7f0a000f;
+        public static final int size_list=0x7f0a0010;
+        public static final int tipo_exercicio=0x7f0a0011;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int athletes=0x7f060004;
-        public static final int btn_register=0x7f06000d;
-        public static final int date=0x7f06000f;
-        public static final int description=0x7f06000c;
-        public static final int duration=0x7f060010;
-        public static final int hello_world=0x7f060006;
-        public static final int instructions=0x7f060009;
-        public static final int register=0x7f060008;
-        public static final int register_athlete=0x7f060002;
-        public static final int register_muscle=0x7f060003;
-        public static final int register_size=0x7f060011;
-        public static final int repetitions=0x7f06000b;
-        public static final int title_activity_introducao=0x7f060005;
-        public static final int title_activity_tipo_exercicio=0x7f060007;
-        public static final int value=0x7f06000e;
-        public static final int weight=0x7f06000a;
+        public static final int action_settings=0x7f070005;
+        public static final int agenda_list=0x7f07000c;
+        public static final int app_name=0x7f070004;
+        public static final int athlete_birthdate=0x7f070022;
+        public static final int athlete_gender=0x7f070023;
+        public static final int athlete_name=0x7f070021;
+        public static final int athletes=0x7f070008;
+        public static final int btn_register=0x7f07001a;
+        public static final int calendar_activities=0x7f070009;
+        public static final int confirm=0x7f070024;
+        public static final int date=0x7f07001c;
+        public static final int day_name_format=0x7f070000;
+        public static final int description=0x7f070019;
+        public static final int duration=0x7f07001f;
+        public static final int edit=0x7f070027;
+        public static final int exercise_detail=0x7f07000d;
+        public static final int exercise_type=0x7f07000b;
+        public static final int final_date=0x7f07001e;
+        public static final int hello=0x7f070003;
+        public static final int hello_world=0x7f070013;
+        public static final int initial_date=0x7f07001d;
+        public static final int instructions=0x7f070016;
+        public static final int invalid_date=0x7f070001;
+        public static final int mark=0x7f07000e;
+        public static final int menu=0x7f070025;
+        public static final int month_name_format=0x7f070002;
+        public static final int muscles=0x7f07000a;
+        public static final int new_=0x7f070026;
+        public static final int register=0x7f070015;
+        public static final int register_athlete=0x7f070006;
+        public static final int register_muscle=0x7f070007;
+        public static final int register_size=0x7f070020;
+        public static final int remove=0x7f070028;
+        public static final int repetitions=0x7f070018;
+        public static final int size=0x7f07000f;
+        public static final int spn_exercise_type_tittle=0x7f070011;
+        public static final int spn_muscle_tittle=0x7f070010;
+        public static final int title_activity_agenda_list=0x7f07002b;
+        public static final int title_activity_exercise_detail=0x7f07002c;
+        public static final int title_activity_exercise_type_list=0x7f07002a;
+        public static final int title_activity_introducao=0x7f070012;
+        public static final int title_activity_main_introduction=0x7f07002d;
+        public static final int title_activity_muscle_list=0x7f070029;
+        public static final int title_activity_tipo_exercicio=0x7f070014;
+        public static final int value=0x7f07001b;
+        public static final int weight=0x7f070017;
     }
     public static final class style {
+        public static final int Animations=0x7f080004;
+        /**  PopDownMenu 
+         */
+        public static final int Animations_PopDownMenu=0x7f080005;
+        public static final int Animations_PopDownMenu_Center=0x7f080008;
+        public static final int Animations_PopDownMenu_Left=0x7f080006;
+        public static final int Animations_PopDownMenu_Right=0x7f080007;
+        /**  PopUpMenu 
+         */
+        public static final int Animations_PopUpMenu=0x7f080009;
+        public static final int Animations_PopUpMenu_Center=0x7f08000c;
+        public static final int Animations_PopUpMenu_Left=0x7f08000a;
+        public static final int Animations_PopUpMenu_Right=0x7f08000b;
         /** 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
@@ -189,7 +424,7 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080001;
+        public static final int AppBaseTheme=0x7f08000e;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -197,6 +432,136 @@ public final class R {
  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080000;
+        public static final int AppTheme=0x7f08000d;
+        public static final int CalendarCell=0x7f080001;
+        public static final int CalendarCell_CalendarDate=0x7f080003;
+        public static final int CalendarCell_DayHeader=0x7f080002;
+        public static final int CalendarTitle=0x7f080000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a calendar_cell.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #calendar_cell_state_current_month com.treinador:state_current_month}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_state_highlighted com.treinador:state_highlighted}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_state_range_first com.treinador:state_range_first}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_state_range_last com.treinador:state_range_last}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_state_range_middle com.treinador:state_range_middle}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_state_selectable com.treinador:state_selectable}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_state_today com.treinador:state_today}</code></td><td></td></tr>
+           </table>
+           @see #calendar_cell_state_current_month
+           @see #calendar_cell_state_highlighted
+           @see #calendar_cell_state_range_first
+           @see #calendar_cell_state_range_last
+           @see #calendar_cell_state_range_middle
+           @see #calendar_cell_state_selectable
+           @see #calendar_cell_state_today
+         */
+        public static final int[] calendar_cell = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_current_month}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_current_month
+        */
+        public static final int calendar_cell_state_current_month = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_highlighted}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_highlighted
+        */
+        public static final int calendar_cell_state_highlighted = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_range_first}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_range_first
+        */
+        public static final int calendar_cell_state_range_first = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_range_last}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_range_last
+        */
+        public static final int calendar_cell_state_range_last = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_range_middle}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_range_middle
+        */
+        public static final int calendar_cell_state_range_middle = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_selectable}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_selectable
+        */
+        public static final int calendar_cell_state_selectable = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.treinador.R.attr#state_today}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.treinador:state_today
+        */
+        public static final int calendar_cell_state_today = 2;
+    };
 }

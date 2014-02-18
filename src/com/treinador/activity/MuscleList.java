@@ -153,7 +153,6 @@ public class MuscleList extends Activity {
 	}
 	
 
-	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -213,6 +212,5 @@ public class MuscleList extends Activity {
 	  
 	  return true;
 	}
-
 
 }

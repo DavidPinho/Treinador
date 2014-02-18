@@ -28,11 +28,8 @@ import android.widget.Toast;
 
 public class AthleteList extends Activity{
 	
-	ListView listView;	
+	ListView  listView;	
 	AthleteDB athletedb;
-	//Button btn_new;
-	//Button btn_delete;
-	//Button btn_update_list_athlete;
 	List<Athlete> athletesList;
 	AthleteAdapter adapter;	
 	public static Athlete athleteSelected;
@@ -43,16 +40,26 @@ public class AthleteList extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_athlete);
 		athleteSelected=null;
-		
 		athletedb = new AthleteDB(getApplicationContext());
 		athletesList = athletedb.getAll();
+		
+		if(athletesList.isEmpty()){
+			Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
+			AthleteList.this.startActivity(intentNew);
+			//AthleteList.this.finish();
+		}
+		
 		adapter = new AthleteAdapter(this, R.layout.list_view_adapter_athlete,(ArrayList<Athlete>) athletesList);
 		
 		listView = (ListView) findViewById(R.id.lv_athlete);
 		listView.setAdapter(adapter);
 		registerForContextMenu(listView);
 		
+		
+
+		
 	}
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,15 +68,20 @@ public class AthleteList extends Activity{
 		return true;
 	}
 	
+	//show menu automatic when initialized layout
+	/*@Override
+	public void onAttachedToWindow() {
+	    super.onAttachedToWindow();
+	    openOptionsMenu();
+	}*/
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	   
-
 		if(item.getItemId()== R.id.action_create){
 			Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
 			AthleteList.this.startActivity(intentNew);
-			AthleteList.this.finish();	
+			//AthleteList.this.finish();	
 		}
 	    return true;
 	} 
@@ -98,25 +110,32 @@ public class AthleteList extends Activity{
 	  
 	  if(menuItemName.equals(menuItems[0])){
 		  Intent intentNew = new Intent(AthleteList.this, CalendarActivities.class);
-		 // intentNew.putExtra("athlete", athlete);
 		  athleteSelected = athlete;
 		  AthleteList.this.startActivity(intentNew);
-		  AthleteList.this.finish();
+		 // AthleteList.this.finish();
+		 return false;
 		  
 	  }else if (menuItemName.equals(menuItems[1])) {
 		  		Intent intentNew = new Intent(AthleteList.this, RegisterAthlete.class);
 				intentNew.putExtra("athlete", athlete);
 				AthleteList.this.startActivity(intentNew);
-				AthleteList.this.finish();
+				//AthleteList.this.finish();
+				return false;
+				
 	        }else if (menuItemName.equals(menuItems[2])) {
-				athletedb.delete(athlete.getIdAthlete());
+				
+	        	athletedb.delete(athlete.getIdAthlete());
 				adapter.clear();
 				ArrayList<Athlete> atheletes = (ArrayList<Athlete>) athletedb.getAll();	
 				adapter.restoreList();				
 				adapter.addAll(atheletes);
+				
+				return true;
 			}
 	  
 	  return true;
 	}
+	
+
 
 }

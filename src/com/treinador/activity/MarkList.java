@@ -49,7 +49,7 @@ public class MarkList extends Activity {
 		
 		markDB = new MarkDB(getApplicationContext());
 		
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Gráficos em breve!").setNeutralButton("OK", null);
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this).setMessage("Grï¿½ficos em breve!").setNeutralButton("OK", null);
 		
 		int athleteId = AthleteList.athleteSelected.getIdAthlete();
 		marks = (ArrayList<Mark>) markDB.getAll(athleteId);
@@ -72,7 +72,7 @@ public class MarkList extends Activity {
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
 		
 		ActionItem exercise = new ActionItem();
-		exercise.setTitle("Exercício");
+		exercise.setTitle("Exercï¿½cio");
 		exercise.setIcon(getResources().getDrawable(R.drawable.ic_exercise));
 		
 		ActionItem mark = new ActionItem();
@@ -80,7 +80,7 @@ public class MarkList extends Activity {
 		mark.setIcon(getResources().getDrawable(R.drawable.ic_mark));
 
 		ActionItem muscle = new ActionItem();
-		muscle.setTitle("Músculo");
+		muscle.setTitle("Mï¿½sculo");
 		muscle.setIcon(getResources().getDrawable(R.drawable.ic_muscle));
 
 		
@@ -97,7 +97,7 @@ public class MarkList extends Activity {
 			public void onClick(View arg0) {
 				Intent intentNew = new Intent(MarkList.this, CalendarActivities.class);
 				MarkList.this.startActivity(intentNew);
-				MarkList.this.finish();	
+				//MarkList.this.finish();	
 				
 			}
 		});
@@ -108,7 +108,7 @@ public class MarkList extends Activity {
 			public void onClick(View v) {
 				Intent intentNew = new Intent(MarkList.this, AthleteList.class);
 				MarkList.this.startActivity(intentNew);
-				MarkList.this.finish();				
+				//MarkList.this.finish();				
 			}
 		});
 		
@@ -138,23 +138,23 @@ public class MarkList extends Activity {
 				if(pos==0){
 					Intent intentNew = new Intent(MarkList.this, SizeList.class);
 					MarkList.this.startActivity(intentNew);
-					MarkList.this.finish();	
+					//MarkList.this.finish();	
 					
 				}else if (pos==1) {
 					Intent intentNew = new Intent(MarkList.this, ExerciseTypeList.class);
 					MarkList.this.startActivity(intentNew);
-					MarkList.this.finish();
+					//MarkList.this.finish();
 				}else if (pos==2) {
 					/*
 					Intent intentNew = new Intent(MarkList.this, MarkList.class);
 					MarkList.this.startActivity(intentNew);
-					MarkList.this.finish();
+					//MarkList.this.finish();
 					*/	
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(MarkList.this, MuscleList.class);
 					MarkList.this.startActivity(intentNew);
-					MarkList.this.finish();
+					//MarkList.this.finish();
 				}
 				
 			}
@@ -164,6 +164,8 @@ public class MarkList extends Activity {
 		
 	}
 
+
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -179,7 +181,7 @@ public class MarkList extends Activity {
 		if(item.getItemId()== R.id.action_create){
 			Intent intentNew = new Intent(MarkList.this, RegisterMark.class);
 			MarkList.this.startActivity(intentNew);
-			MarkList.this.finish();	
+			//MarkList.this.finish();	
 		}
 	    return true;
 	} 
@@ -214,7 +216,7 @@ public class MarkList extends Activity {
 			  markDB.update(mark);
 		  }
 		  else{
-			  AlertDialog.Builder alert2 = new AlertDialog.Builder(this).setMessage("Marco já finalizado!").setNeutralButton("OK", null);
+			  AlertDialog.Builder alert2 = new AlertDialog.Builder(this).setMessage("Marco jï¿½ finalizado!").setNeutralButton("OK", null);
 			  alert2.show();
 		  }		  
 		  
@@ -222,7 +224,7 @@ public class MarkList extends Activity {
 		    Intent intentNew = new Intent(MarkList.this, RegisterMark.class);
 			intentNew.putExtra("mark", mark);
 			MarkList.this.startActivity(intentNew);
-			MarkList.this.finish();
+			//MarkList.this.finish();
 		  
 	  }else if (menuItemName.equals(menuItems[2])) {
 		  	markDB.delete(mark.getIdMark());
@@ -236,8 +238,5 @@ public class MarkList extends Activity {
 	  return true;
 	}
 
-	
-	
-	
 
 }

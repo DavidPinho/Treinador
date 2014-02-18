@@ -39,6 +39,8 @@ public class AgendaList extends Activity {
 	private ImageButton btn_lists;
 	private ArrayList<Exercise> exercises;
 	private ExerciseDB exerciseDB;
+
+
 	
 	private static long date;
 
@@ -68,7 +70,7 @@ public class AgendaList extends Activity {
 		btn_calendar = (ImageButton) (findViewById(R.id.btn_calendar));
 		btn_graphics = (ImageButton) (findViewById(R.id.btn_graphics));
 		btn_lists = (ImageButton) (findViewById(R.id.btn_lists));
-		
+
 		ActionItem size = new ActionItem();
 		size.setTitle("Medida");
 		size.setIcon(getResources().getDrawable(R.drawable.ic_size));
@@ -98,7 +100,7 @@ public class AgendaList extends Activity {
 			public void onClick(View arg0) {
 				Intent intentNew = new Intent(AgendaList.this, CalendarActivities.class);
 				AgendaList.this.startActivity(intentNew);
-				AgendaList.this.finish();	
+				//AgendaList.this.finish();	
 				
 			}
 		});
@@ -109,7 +111,7 @@ public class AgendaList extends Activity {
 			public void onClick(View v) {
 				Intent intentNew = new Intent(AgendaList.this, AthleteList.class);
 				AgendaList.this.startActivity(intentNew);
-				AgendaList.this.finish();				
+				//AgendaList.this.finish();				
 			}
 		});
 		
@@ -137,21 +139,21 @@ public class AgendaList extends Activity {
 				if(pos==0){
 					Intent intentNew = new Intent(AgendaList.this, SizeList.class);
 					AgendaList.this.startActivity(intentNew);
-					AgendaList.this.finish();	
+					//AgendaList.this.finish();	
 					
 				}else if (pos==1) {
 					Intent intentNew = new Intent(AgendaList.this, ExerciseTypeList.class);
 					AgendaList.this.startActivity(intentNew);
-					AgendaList.this.finish();
+					//AgendaList.this.finish();
 				}else if (pos==2) {
 					Intent intentNew = new Intent(AgendaList.this, MarkList.class);
 					AgendaList.this.startActivity(intentNew);
-					AgendaList.this.finish();
+					//AgendaList.this.finish();
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(AgendaList.this, MuscleList.class);
 					AgendaList.this.startActivity(intentNew);
-					AgendaList.this.finish();
+					//AgendaList.this.finish();
 				}
 				
 			}
@@ -160,6 +162,7 @@ public class AgendaList extends Activity {
 		
 		
 	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -175,7 +178,7 @@ public class AgendaList extends Activity {
 		if(item.getItemId()== R.id.action_create){
 			Intent intentNew = new Intent(AgendaList.this, RegisterExercise.class);
 			AgendaList.this.startActivity(intentNew);
-			AgendaList.this.finish();	
+			//AgendaList.this.finish();	
 		}
 	    return true;
 	} 
@@ -207,13 +210,13 @@ public class AgendaList extends Activity {
 		  Intent intentNew = new Intent(AgendaList.this, ExerciseDetail.class);
 		  intentNew.putExtra("exercise", exercise);
 		  AgendaList.this.startActivity(intentNew);
-		  AgendaList.this.finish();
+		 // AgendaList.this.finish();
 		  
 	  }else if (menuItemName.equals(menuItems[1])) {
 		  Intent intentNew = new Intent(AgendaList.this, RegisterExercise.class);
 		  intentNew.putExtra("exercise", exercise);
 		  AgendaList.this.startActivity(intentNew);
-		  AgendaList.this.finish();
+		  //AgendaList.this.finish();
 	  }else if (menuItemName.equals(menuItems[2])) {
 		  exerciseDB.delete(exercise.getIdExercise());
 		  adapter.clear();
@@ -232,4 +235,6 @@ public class AgendaList extends Activity {
 	public static long getDate(){
 		return date;
 	}
+
+	
 }

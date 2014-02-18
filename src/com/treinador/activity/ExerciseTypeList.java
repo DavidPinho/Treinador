@@ -93,7 +93,7 @@ public class ExerciseTypeList extends Activity {
 			public void onClick(View arg0) {
 				Intent intentNew = new Intent(ExerciseTypeList.this, CalendarActivities.class);
 				ExerciseTypeList.this.startActivity(intentNew);
-				ExerciseTypeList.this.finish();	
+				//ExerciseTypeList.this.finish();	
 			
 				
 			}
@@ -105,7 +105,7 @@ public class ExerciseTypeList extends Activity {
 			public void onClick(View v) {
 				Intent intentNew = new Intent(ExerciseTypeList.this, AthleteList.class);
 				ExerciseTypeList.this.startActivity(intentNew);
-				ExerciseTypeList.this.finish();				
+				//ExerciseTypeList.this.finish();				
 			}
 		});
 		
@@ -135,28 +135,30 @@ public class ExerciseTypeList extends Activity {
 				if(pos==0){
 					Intent intentNew = new Intent(ExerciseTypeList.this, SizeList.class);
 					ExerciseTypeList.this.startActivity(intentNew);
-					ExerciseTypeList.this.finish();
+					//ExerciseTypeList.this.finish();
 					
 				}else if (pos==1) {
 					/*
 					Intent intentNew = new Intent(ExerciseTypeList.this, ExerciseTypeList.class);
 					ExerciseTypeList.this.startActivity(intentNew);
-					ExerciseTypeList.this.finish();
+					//ExerciseTypeList.this.finish();
 					*/				
 				}else if (pos==2) {
 					Intent intentNew = new Intent(ExerciseTypeList.this, MarkList.class);
 					ExerciseTypeList.this.startActivity(intentNew);
-					ExerciseTypeList.this.finish();
+					//ExerciseTypeList.this.finish();
 					
 				}else if (pos==3) {
 					Intent intentNew = new Intent(ExerciseTypeList.this, MuscleList.class);
 					ExerciseTypeList.this.startActivity(intentNew);
-					ExerciseTypeList.this.finish();
+					//ExerciseTypeList.this.finish();
 				}
 				
 			}
 		});
 	}
+	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -171,7 +173,7 @@ public class ExerciseTypeList extends Activity {
 		if(item.getItemId()== R.id.action_create){
 			Intent intentNew = new Intent(ExerciseTypeList.this, RegisterExerciseType.class);
 			ExerciseTypeList.this.startActivity(intentNew);
-			ExerciseTypeList.this.finish();	
+			//ExerciseTypeList.this.finish();	
 		}
 	    return true;
 	} 		
@@ -200,7 +202,7 @@ public class ExerciseTypeList extends Activity {
 			  Intent intentNew = new Intent(ExerciseTypeList.this, RegisterExerciseType.class);
 				intentNew.putExtra("exerciseType", exerciseType);
 				ExerciseTypeList.this.startActivity(intentNew);
-				ExerciseTypeList.this.finish();
+				//ExerciseTypeList.this.finish();
 			  
 		  }else if (menuItemName.equals(menuItems[1])) {
 			  	exerciseTypeDB.delete(exerciseType.getIdExerciseType());
@@ -214,4 +216,6 @@ public class ExerciseTypeList extends Activity {
 		  
 		  return true;
 		}
+		
+
 }

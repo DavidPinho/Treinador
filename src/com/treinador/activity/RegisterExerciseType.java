@@ -56,12 +56,13 @@ public class RegisterExerciseType extends Activity {
 							
 				Intent intent = new Intent(RegisterExerciseType.this, ExerciseTypeList.class);
 				RegisterExerciseType.this.startActivity(intent);
-				RegisterExerciseType.this.finish();
+				//RegisterExerciseType.this.finish();
 			
 			}
 		});
 	}
 	
+
 	
 	private void fillFields(ExerciseType et ){
 		description.setText(et.getDescription());
@@ -74,5 +75,6 @@ public class RegisterExerciseType extends Activity {
 		getMenuInflater().inflate(R.menu.tipo_exercicio, menu);
 		return true;
 	}
+	
 
 }
